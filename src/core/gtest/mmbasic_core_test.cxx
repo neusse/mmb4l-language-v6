@@ -881,6 +881,24 @@ TEST_F(MmBasicCoreTest, Tokenise_RunStatement) {
     EXPECT_STREQ(expected, tknbuf);
 }
 
+TEST_F(MmBasicCoreTest, Tokenise_ChainStatement) {
+    sprintf(inpbuf, "Chain \"foo\", --base=1");
+
+    tokenise(0);
+
+    char expected[TKNBUF_SIZE];
+    sprintf(
+            expected,
+            "%c%c%c\"foo\", %c%cbase%c1",
+            T_NEWLINE,
+            (GetCommandValue("Chain") & 0x7F) + C_BASETOKEN,
+            (GetCommandValue("Chain") >> 7) + C_BASETOKEN,
+            GetTokenValue("-"),
+            GetTokenValue("-"),
+            GetTokenValue("="));
+    EXPECT_STREQ(expected, tknbuf);
+}
+
 TEST_F(MmBasicCoreTest, PrepareProgram_And_FindSubFun) {
     TokeniseAndAppend("Sub foo()");
     TokeniseAndAppend("End Sub");

@@ -11,7 +11,6 @@ Bitstream,BITSTREAM,command,hardware,cmd_bitstream,-,"Depends on PicoMite hardwa
 Blit Memory,BLIT MEMORY,command,portable,cmd_blitmemory,-,Language/runtime feature with no required PicoMite-only hardware.
 Calc,CALC,command,defer,cmd_calc,-,Needs source review before deciding whether it is portable or backend-specific.
 Camera,CAMERA,command,hardware,cmd_camera,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
-Chain,CHAIN,command,portable,cmd_chain,-,Language/runtime feature with no required PicoMite-only hardware.
 Click(,CLICK,function,hardware,fun_click,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
 CMM2 Load,CMM2 LOAD,command,linux-specific,cmd_loadCMM2,-,"Needs Linux filesystem, process, or host configuration semantics."
 CMM2 Run,CMM2 RUN,command,linux-specific,cmd_RunCMM2,-,"Needs Linux filesystem, process, or host configuration semantics."

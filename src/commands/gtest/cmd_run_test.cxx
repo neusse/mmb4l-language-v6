@@ -12,6 +12,7 @@ extern "C" {
 #include "../../core/Commands.h"
 #include "../../core/MMBasic.h"
 #include "../../core/vartbl.h"
+#define DO_NOT_STUB_CMD_CHAIN
 #define DO_NOT_STUB_CMD_RUN
 #include "../../core/gtest/command_stubs.h"
 #define DO_NOT_STUB_FUN_MMCMDLINE

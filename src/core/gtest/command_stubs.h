@@ -15,6 +15,9 @@ void cmd_byte() { }
 void cmd_call() { }
 void cmd_case() { }
 void cmd_cfunction() { }
+#if !defined(DO_NOT_STUB_CMD_CHAIN)
+void cmd_chain() { }
+#endif
 void cmd_chdir() { }
 void cmd_circle() { }
 void cmd_clear() { }

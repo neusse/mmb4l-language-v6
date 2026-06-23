@@ -226,3 +226,7 @@ void cmd_run(void) {
     if (*ProgMemory != T_NEWLINE) return;  // no program to run
     nextstmt = ProgMemory;
 }
+
+void cmd_chain(void) {
+    cmd_run();
+}

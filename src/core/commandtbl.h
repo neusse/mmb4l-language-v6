@@ -80,6 +80,7 @@ void cmd_byte(void);
 void cmd_call(void);
 void cmd_case(void);
 void cmd_cfunction(void);
+void cmd_chain(void);
 void cmd_chdir(void);
 void cmd_circle(void);
 void cmd_clear(void);

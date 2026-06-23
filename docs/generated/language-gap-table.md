@@ -8,7 +8,7 @@ A gap row means PicoMite exposes that surface and MMB4L does not expose the same
 
 | Classification | Count |
 | --- | ---: |
-| portable | 22 |
+| portable | 21 |
 | linux-specific | 15 |
 | hardware | 84 |
 | defer | 4 |
@@ -127,7 +127,6 @@ A gap row means PicoMite exposes that surface and MMB4L does not expose the same
 | `Astro` | command | portable | `cmd_star` | - | Language/runtime feature with no required PicoMite-only hardware. |
 | `Bezier` | command | portable | `cmd_bezier` | - | Language/runtime feature with no required PicoMite-only hardware. |
 | `Blit Memory` | command | portable | `cmd_blitmemory` | - | Language/runtime feature with no required PicoMite-only hardware. |
-| `Chain` | command | portable | `cmd_chain` | - | Language/runtime feature with no required PicoMite-only hardware. |
 | `End Type` | command | portable | `cmd_endtype` | - | Language/runtime feature with no required PicoMite-only hardware. |
 | `Fill` | command | portable | `cmd_fill` | - | Language/runtime feature with no required PicoMite-only hardware. |
 | `Flags` | function | portable | `cmd_flags` | command | Language/runtime feature with no required PicoMite-only hardware. |
