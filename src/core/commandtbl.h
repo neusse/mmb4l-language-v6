@@ -131,6 +131,7 @@ void cmd_lineinput(void);
 void cmd_list(void);
 void cmd_load(void);
 void cmd_longstring(void);
+void cmd_lmid(void);
 void cmd_loop(void);
 void cmd_math(void);
 void cmd_memory(void);

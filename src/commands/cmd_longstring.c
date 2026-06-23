@@ -46,6 +46,9 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include "../common/error.h"
 #include "../common/file.h"
 #include "../common/parse.h"
+#include "../core/tokentbl.h"
+
+#include <string.h>
 
 static void longstring_append(const char *tp) {
     void *ptr1 = NULL;
@@ -226,6 +229,55 @@ static void longstring_load(const char *tp) {
     while (i--) *q++ = *p++;
     dest[0] += nbr;
     return;
+}
+
+void cmd_lmid(void) {
+    int64_t *dest = NULL;
+    char *ls_start = NULL;
+    int capacity;
+    int current_length;
+    int num = -1;
+
+    getargs(&cmdline, 5, ",");
+    if (!(argc == 3 || argc == 5)) ERROR_ARGUMENT_COUNT;
+
+    void *ptr1 = findvar(argv[0], V_FIND | V_EMPTY_OK);
+    if (vartbl[VarIndex].type & T_CONST) ERROR_CANNOT_CHANGE_A_CONSTANT;
+    if (!(vartbl[VarIndex].type & T_INT)) ERROR_ARG_NOT_INTEGER_ARRAY(1);
+    if (vartbl[VarIndex].dims[1] != 0) ERROR_INVALID_VARIABLE;
+    if (vartbl[VarIndex].dims[0] <= 0) ERROR_ARG_NOT_INTEGER_ARRAY(1);
+
+    dest = (int64_t *)ptr1;
+    capacity = (vartbl[VarIndex].dims[0] - mmb_options.base) * 8;
+    current_length = (int)dest[0];
+    ls_start = (char *)&dest[1];
+
+    int start = getint(argv[2], 1, current_length);
+    if (argc == 5) num = getint(argv[4], 0, current_length);
+    if (start + (num < 0 ? 0 : num - 1) - 1 > current_length) {
+        error_throw_ex(kError, "Selection exceeds length of string");
+    }
+
+    while (*cmdline && tokenfunction(*cmdline) != op_equal) cmdline++;
+    if (!*cmdline) ERROR_SYNTAX;
+    ++cmdline;
+    if (!*cmdline) ERROR_SYNTAX;
+
+    char *value = getstring(cmdline);
+    if (num == -1) num = value[0];
+
+    int start_index = start - 1;
+    if (num == value[0]) {
+        memcpy(&ls_start[start_index], &value[1], num);
+    } else {
+        int change = value[0] - num;
+        if (current_length + change > capacity) error_throw_ex(kError, "String too long");
+        memmove(&ls_start[start_index + value[0]],
+                &ls_start[start_index + num],
+                current_length - (start_index + num));
+        dest[0] += change;
+        memcpy(&ls_start[start_index], &value[1], value[0]);
+    }
 }
 
 static void longstring_mid(const char *tp) {

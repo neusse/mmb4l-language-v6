@@ -28,6 +28,7 @@ add_test("test_lgetstr")
 add_test("test_linstr")
 add_test("test_llen")
 add_test("test_load")
+add_test("test_lmid")
 add_test("test_mid")
 add_test("test_print")
 add_test("test_replace")
@@ -174,6 +175,20 @@ Sub test_load()
   LongString Load dest%(), 5, src$
 
   assert_string_equals("Hello", LGetStr$(dest%(), 1, LLen(dest%())))
+End Sub
+
+Sub test_lmid()
+  Local array%(100)
+  LongString Append array%(), "Hello World"
+
+  LMid(array%(), 7) = "Mars"
+  assert_string_equals("Hello Marsd", LGetStr$(array%(), 1, LLen(array%())))
+
+  LMid(array%(), 6, 0) = " cruel"
+  assert_string_equals("Hello cruel Marsd", LGetStr$(array%(), 1, LLen(array%())))
+
+  LMid(array%(), 12, 6) = ""
+  assert_string_equals("Hello cruel", LGetStr$(array%(), 1, LLen(array%())))
 End Sub
 
 Sub test_mid()

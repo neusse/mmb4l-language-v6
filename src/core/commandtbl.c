@@ -188,6 +188,7 @@ const struct s_tokentbl commandtbl[] = {
     { "Flags",       T_CMD,              0, cmd_flags    },
     { "/*",          T_CMD,              0, cmd_comment  },
     { "*/",          T_CMD,              0, cmd_endcomment },
+    { "LMid(",       T_CMD | T_FUN,      0, cmd_lmid     },
     { "",            0,                  0, cmd_null,    }  // This dummy entry is always at the end.
 };
 

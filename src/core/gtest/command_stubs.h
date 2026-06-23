@@ -68,6 +68,7 @@ void cmd_list() { }
 void cmd_load() { }
 void cmd_loop() { }
 void cmd_longstring() { }
+void cmd_lmid() { }
 void cmd_math() { }
 void cmd_memory() { }
 void cmd_mid() { }

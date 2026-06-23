@@ -57,8 +57,6 @@ Keypad,KEYPAD,command,hardware,cmd_keypad,-,"Depends on PicoMite hardware, displ
 LCD,LCD,command,hardware,cmd_lcd,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
 Library,LIBRARY,command,linux-specific,cmd_library,-,PicoMite library storage is flash-based; Linux needs a filesystem/module design rather than direct behavior cloning.
 LInput(,LINPUT,function,portable,fun_linputstr,-,Language/runtime feature with no required PicoMite-only hardware.
-LMid(,LMID,command,portable,cmd_lmid,-,Language/runtime feature with no required PicoMite-only hardware.
-LMid(,LMID,function,portable,cmd_lmid,-,Language/runtime feature with no required PicoMite-only hardware.
 Location,LOCATION,command,portable,cmd_locate,-,Language/runtime feature with no required PicoMite-only hardware.
 Mandelbrot,MANDELBROT,command,portable,cmd_mandelbrot,-,Language/runtime feature with no required PicoMite-only hardware.
 Map,MAP,command,hardware,cmd_map,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."

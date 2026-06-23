@@ -127,6 +127,7 @@ MMB4L,command,Flag(,FLAG,"command,function",T_CMD | T_FUN,0,cmd_flag,187
 MMB4L,command,Flags,FLAGS,command,T_CMD,0,cmd_flags,188
 MMB4L,command,/*,/*,command,T_CMD,0,cmd_comment,189
 MMB4L,command,*/,*/,command,T_CMD,0,cmd_endcomment,190
+MMB4L,command,LMid(,LMID,"command,function",T_CMD | T_FUN,0,cmd_lmid,191
 MMB4L,token,@(,@,function,T_FUN | T_STR,0,fun_at,64
 MMB4L,token,Abs(,ABS,function,T_FUN | T_NBR | T_INT,0,fun_abs,65
 MMB4L,token,ACos(,ACOS,function,T_FUN | T_NBR,0,fun_acos,66
