@@ -8,7 +8,7 @@ A gap row means PicoMite exposes that surface and MMB4L does not expose the same
 
 | Classification | Count |
 | --- | ---: |
-| portable | 35 |
+| portable | 33 |
 | linux-specific | 15 |
 | hardware | 84 |
 | defer | 4 |
@@ -127,7 +127,6 @@ A gap row means PicoMite exposes that surface and MMB4L does not expose the same
 | `Array Set` | command | portable | `cmd_arrayset` | - | Language/runtime feature with no required PicoMite-only hardware. |
 | `Array Slice` | command | portable | `cmd_slice` | - | Language/runtime feature with no required PicoMite-only hardware. |
 | `Astro` | command | portable | `cmd_star` | - | Language/runtime feature with no required PicoMite-only hardware. |
-| `base$(` | function | portable | `fun_base` | - | Language/runtime feature with no required PicoMite-only hardware. |
 | `Bezier` | command | portable | `cmd_bezier` | - | Language/runtime feature with no required PicoMite-only hardware. |
 | `Bit(` | command | portable | `cmd_bit` | - | Language/runtime feature with no required PicoMite-only hardware. |
 | `Bit(` | function | portable | `cmd_bit, fun_bit` | - | Language/runtime feature with no required PicoMite-only hardware. |
@@ -151,7 +150,6 @@ A gap row means PicoMite exposes that surface and MMB4L does not expose the same
 | `Star` | command | portable | `cmd_star` | - | Language/runtime feature with no required PicoMite-only hardware. |
 | `Struct` | command | portable | `cmd_struct` | - | Language/runtime feature with no required PicoMite-only hardware. |
 | `Struct` | function | portable | `fun_struct` | - | Language/runtime feature with no required PicoMite-only hardware. |
-| `TopBottom(` | function | portable | `fun_max_min` | - | Language/runtime feature with no required PicoMite-only hardware. |
 | `Turtle` | command | portable | `cmd_turtle` | - | Language/runtime feature with no required PicoMite-only hardware. |
 | `Type` | command | portable | `cmd_type` | - | Language/runtime feature with no required PicoMite-only hardware. |
 | `VAR` | command | portable | `cmd_var` | - | Language/runtime feature with no required PicoMite-only hardware. |

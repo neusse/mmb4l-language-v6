@@ -27,6 +27,7 @@ add_test("test_mid_function")
 add_test("test_mid_command")
 add_test("test_oct_function")
 add_test("test_str_function")
+add_test("test_base_function")
 add_test("test_trim_function")
 add_test("test_schange_function")
 add_test("test_bin2str_function")
@@ -194,6 +195,13 @@ Sub test_str_function()
   assert_string_equals("  -1", Str$(-1, 4))
   assert_string_equals("9223372036854775807", Str$(MAX_INT%, 4))
   assert_string_equals("-9223372036854775808", Str$(MIN_INT%, 4))
+End Sub
+
+Sub test_base_function()
+  assert_string_equals("0", base$(2, 0))
+  assert_string_equals("101010", base$(2, 42))
+  assert_string_equals("00002A", base$(16, 42, 6))
+  assert_string_equals("Z", base$(36, 35))
 End Sub
 
 Sub test_trim_function()

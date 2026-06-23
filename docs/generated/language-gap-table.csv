@@ -8,7 +8,6 @@ Array Set,ARRAY SET,command,portable,cmd_arrayset,-,Language/runtime feature wit
 Array Slice,ARRAY SLICE,command,portable,cmd_slice,-,Language/runtime feature with no required PicoMite-only hardware.
 Astro,ASTRO,command,portable,cmd_star,-,Language/runtime feature with no required PicoMite-only hardware.
 Backlight,BACKLIGHT,command,hardware,cmd_backlight,-,"Hardware command, but a target-specific Luckfox/PicoCalc backend may be useful because the device has controllable backlight support."
-base$(,BASE$,function,portable,fun_base,-,Language/runtime feature with no required PicoMite-only hardware.
 Bezier,BEZIER,command,portable,cmd_bezier,-,Language/runtime feature with no required PicoMite-only hardware.
 Bit(,BIT,command,portable,cmd_bit,-,Language/runtime feature with no required PicoMite-only hardware.
 Bit(,BIT,function,portable,"cmd_bit, fun_bit",-,Language/runtime feature with no required PicoMite-only hardware.
@@ -115,7 +114,6 @@ Tilemap,TILEMAP,command,hardware,cmd_tilemap,-,"Depends on PicoMite hardware, di
 Tilemap,TILEMAP,function,hardware,fun_tilemap,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
 Time$,TIME$,command,linux-specific,cmd_time,function,"Needs Linux filesystem, process, or host configuration semantics."
 TMC22xx,TMC22XX,command,hardware,cmd_TMC22xx,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
-TopBottom(,TOPBOTTOM,function,portable,fun_max_min,-,Language/runtime feature with no required PicoMite-only hardware.
 Touch(,TOUCH,function,hardware,fun_touch,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
 Turtle,TURTLE,command,portable,cmd_turtle,-,Language/runtime feature with no required PicoMite-only hardware.
 Type,TYPE,command,portable,cmd_type,-,Language/runtime feature with no required PicoMite-only hardware.

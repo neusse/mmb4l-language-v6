@@ -211,6 +211,24 @@ void fun_bin(void) {
 }
 
 
+// Returns the representation of an integer in the requested base.
+// s$ = BASE$(base, nbr [, width])
+void fun_base(void) {
+    getargs(&ep, 5, ",");
+    if (!(argc == 3 || argc == 5)) ERROR_SYNTAX;
+
+    int base = getint(argv[0], 2, 36);
+    UNSIGNED_MMINTEGER value = (UNSIGNED_MMINTEGER)getinteger(argv[2]);
+    int width = 1;
+    if (argc == 5) width = getint(argv[4], 0, MAXSTRLEN);
+
+    sret = GetTempStrMemory();
+    IntToStrPad(sret, (MMINTEGER)value, '0', width, base);
+    CtoM(sret);
+    targ = T_STR;
+}
+
+
 
 // syntax:  nbr = INSTR([start,] string1, string2)
 //          find the position of string2 in string1 starting at start chars in string1
@@ -863,4 +881,23 @@ void fun_max(void) {
 
 void fun_min(void) {
     do_max_min(0);
+}
+
+
+// Returns top/max when selector starts with "A", otherwise bottom/min.
+// n = TOPBOTTOM(selector$, nbr [, nbr ...])
+void fun_topbottom(void) {
+    getargs(&ep, (MAX_ARG_COUNT * 2) - 1, ",");
+    if (argc < 3 || (argc & 1) != 1) ERROR_SYNTAX;
+
+    char *selector = getstring(argv[0]);
+    bool use_max = (unsigned char)selector[0] > 0 && toupper((unsigned char)selector[1]) == 'A';
+    MMFLOAT result = use_max ? -FLT_MAX : FLT_MAX;
+    for (int i = 2; i < argc; i += 2) {
+        MMFLOAT value = getnumber(argv[i]);
+        if (use_max && value > result) result = value;
+        if (!use_max && value < result) result = value;
+    }
+    fret = result;
+    targ = T_NBR;
 }

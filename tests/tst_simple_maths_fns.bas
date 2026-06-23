@@ -23,6 +23,7 @@ add_test("test_min_given_ints")
 add_test("test_min_given_floats")
 add_test("test_max_given_ints")
 add_test("test_max_given_floats")
+add_test("test_topbottom")
 add_test("test_abs")
 add_test("test_exp")
 add_test("test_log")
@@ -79,6 +80,11 @@ Sub test_max_given_floats()
   assert_float_equals(6.02214086e23, Max(6.02214086e23, 6.02214086e23))
 
   assert_float_equals(6.02214086e23, Max(6.02214086e23, -3.412, -6.02214086e23, 3.412))
+End Sub
+
+Sub test_topbottom()
+  assert_float_equals(10, TopBottom("A", 5, 10, -1), 1e-10)
+  assert_float_equals(-1, TopBottom("B", 5, 10, -1), 1e-10)
 End Sub
 
 Sub test_abs()
