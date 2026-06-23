@@ -1,0 +1,347 @@
+source,table,name,normalized,surfaces,flags,precedence,handler,line
+PicoMite,command,Call,CALL,command,T_CMD,0,cmd_call,431
+PicoMite,command,Clear,CLEAR,command,T_CMD,0,cmd_clear,432
+PicoMite,command,Continue,CONTINUE,command,T_CMD,0,cmd_continue,433
+PicoMite,command,Data,DATA,command,T_CMD,0,cmd_null,434
+PicoMite,command,Dim,DIM,command,T_CMD,0,cmd_dim,435
+PicoMite,command,Do,DO,command,T_CMD,0,cmd_do,436
+PicoMite,command,Else If,ELSE IF,command,T_CMD,0,cmd_else,437
+PicoMite,command,End If,END IF,command,T_CMD,0,cmd_null,438
+PicoMite,command,Exit Do,EXIT DO,command,T_CMD,0,cmd_exit,439
+PicoMite,command,ElseIf,ELSEIF,command,T_CMD,0,cmd_else,440
+PicoMite,command,Case Else,CASE ELSE,command,T_CMD,0,cmd_case,441
+PicoMite,command,Else,ELSE,command,T_CMD,0,cmd_else,442
+PicoMite,command,Select Case,SELECT CASE,command,T_CMD,0,cmd_select,443
+PicoMite,command,End Select,END SELECT,command,T_CMD,0,cmd_null,444
+PicoMite,command,Case,CASE,command,T_CMD,0,cmd_case,445
+PicoMite,command,EndIf,ENDIF,command,T_CMD,0,cmd_null,446
+PicoMite,command,End Function,END FUNCTION,command,T_CMD,0,cmd_endfun,447
+PicoMite,command,End Sub,END SUB,command,T_CMD,0,cmd_return,448
+PicoMite,command,End,END,command,T_CMD,0,cmd_end,449
+PicoMite,command,Erase,ERASE,command,T_CMD,0,cmd_erase,450
+PicoMite,command,Error,ERROR,command,T_CMD,0,cmd_error,451
+PicoMite,command,Exit For,EXIT FOR,command,T_CMD,0,cmd_exitfor,452
+PicoMite,command,Exit Sub,EXIT SUB,command,T_CMD,0,cmd_return,453
+PicoMite,command,Exit Function,EXIT FUNCTION,command,T_CMD,0,cmd_endfun,454
+PicoMite,command,Exit,EXIT,command,T_CMD,0,cmd_exit,455
+PicoMite,command,For,FOR,command,T_CMD,0,cmd_for,456
+PicoMite,command,Function,FUNCTION,command,T_CMD,0,cmd_subfun,457
+PicoMite,command,GoSub,GOSUB,command,T_CMD,0,cmd_gosub,458
+PicoMite,command,GoTo,GOTO,command,T_CMD,0,cmd_goto,459
+PicoMite,command,Inc,INC,command,T_CMD,0,cmd_inc,460
+PicoMite,command,If,IF,command,T_CMD,0,cmd_if,461
+PicoMite,command,Line Input,LINE INPUT,command,T_CMD,0,cmd_lineinput,462
+PicoMite,command,Input,INPUT,command,T_CMD,0,cmd_input,463
+PicoMite,command,Let,LET,command,T_CMD,0,cmd_let,464
+PicoMite,command,List,LIST,command,T_CMD,0,cmd_list,465
+PicoMite,command,Load,LOAD,command,T_CMD,0,cmd_load,466
+PicoMite,command,Local,LOCAL,command,T_CMD,0,cmd_dim,467
+PicoMite,command,Loop,LOOP,command,T_CMD,0,cmd_loop,468
+PicoMite,command,Next,NEXT,command,T_CMD,0,cmd_next,469
+PicoMite,command,On,ON,command,T_CMD,0,cmd_on,470
+PicoMite,command,Print,PRINT,command,T_CMD,0,cmd_print,471
+PicoMite,command,Read,READ,command,T_CMD,0,cmd_read,472
+PicoMite,command,Rem,REM,command,T_CMD,0,cmd_null,473
+PicoMite,command,Restore,RESTORE,command,T_CMD,0,cmd_restore,474
+PicoMite,command,Return,RETURN,command,T_CMD,0,cmd_return,475
+PicoMite,command,Run,RUN,command,T_CMD,0,cmd_run,476
+PicoMite,command,Save,SAVE,command,T_CMD,0,cmd_save,477
+PicoMite,command,Static,STATIC,command,T_CMD,0,cmd_dim,478
+PicoMite,command,Sub,SUB,command,T_CMD,0,cmd_subfun,479
+PicoMite,command,Trace,TRACE,command,T_CMD,0,cmd_trace,480
+PicoMite,command,While,WHILE,command,T_CMD,0,cmd_do,481
+PicoMite,command,Const,CONST,command,T_CMD,0,cmd_const,482
+PicoMite,command,Execute,EXECUTE,command,T_CMD,0,cmd_execute,483
+PicoMite,command,MID$(,MID$,"command,function",T_CMD | T_FUN,0,cmd_mid,484
+PicoMite,command,/*,/*,command,T_CMD,0,cmd_comment,485
+PicoMite,command,*/,*/,command,T_CMD,0,cmd_endcomment,486
+PicoMite,command,Open,OPEN,command,T_CMD,0,cmd_open,487
+PicoMite,command,Close,CLOSE,command,T_CMD,0,cmd_close,488
+PicoMite,command,Kill,KILL,command,T_CMD,0,cmd_kill,489
+PicoMite,command,Rmdir,RMDIR,command,T_CMD,0,cmd_rmdir,490
+PicoMite,command,Chdir,CHDIR,command,T_CMD,0,cmd_chdir,491
+PicoMite,command,Mkdir,MKDIR,command,T_CMD,0,cmd_mkdir,492
+PicoMite,command,Copy,COPY,command,T_CMD,0,cmd_copy,493
+PicoMite,command,Rename,RENAME,command,T_CMD,0,cmd_name,494
+PicoMite,command,Seek,SEEK,command,T_CMD,0,cmd_seek,495
+PicoMite,command,Flash,FLASH,command,T_CMD,0,cmd_flash,496
+PicoMite,command,VAR,VAR,command,T_CMD,0,cmd_var,497
+PicoMite,command,Flush,FLUSH,command,T_CMD,0,cmd_flush,498
+PicoMite,command,Drive,DRIVE,command,T_CMD,0,cmd_drive,499
+PicoMite,command,Play,PLAY,command,T_CMD,0,cmd_play,500
+PicoMite,command,PIO,PIO,command,T_CMD,0,cmd_pio,501
+PicoMite,command,New,NEW,command,T_CMD,0,cmd_new,502
+PicoMite,command,Pixel,PIXEL,command,T_CMD,0,cmd_pixel,503
+PicoMite,command,Circle,CIRCLE,command,T_CMD,0,cmd_circle,504
+PicoMite,command,Line,LINE,command,T_CMD,0,cmd_line,505
+PicoMite,command,Box,BOX,command,T_CMD,0,cmd_box,506
+PicoMite,command,RBox,RBOX,command,T_CMD,0,cmd_rbox,507
+PicoMite,command,CLS,CLS,command,T_CMD,0,cmd_cls,508
+PicoMite,command,Font,FONT,command,T_CMD,0,cmd_font,509
+PicoMite,command,Triangle,TRIANGLE,command,T_CMD,0,cmd_triangle,510
+PicoMite,command,Arc,ARC,command,T_CMD,0,cmd_arc,511
+PicoMite,command,Polygon,POLYGON,command,T_CMD,0,cmd_polygon,512
+PicoMite,command,FRAMEBUFFER,FRAMEBUFFER,command,T_CMD,0,cmd_framebuffer,513
+PicoMite,command,Sprite,SPRITE,command,T_CMD,0,cmd_sprite,514
+PicoMite,command,Blit,BLIT,command,T_CMD,0,cmd_blit,515
+PicoMite,command,Edit File,EDIT FILE,command,T_CMD,0,cmd_editfile,516
+PicoMite,command,Edit,EDIT,command,T_CMD,0,cmd_edit,517
+PicoMite,command,ADC,ADC,command,T_CMD,0,cmd_adc,518
+PicoMite,command,Pin(,PIN,"command,function",T_CMD | T_FUN,0,cmd_pin,519
+PicoMite,command,SetPin,SETPIN,command,T_CMD,0,cmd_setpin,520
+PicoMite,command,Pulse,PULSE,command,T_CMD,0,cmd_pulse,521
+PicoMite,command,Port(,PORT,"command,function",T_CMD | T_FUN,0,cmd_port,522
+PicoMite,command,IR,IR,command,T_CMD,0,cmd_ir,523
+PicoMite,command,Blit Memory,BLIT MEMORY,command,T_CMD,0,cmd_blitmemory,524
+PicoMite,command,GUI,GUI,command,T_CMD,0,cmd_gui,526
+PicoMite,command,GUI,GUI,command,T_CMD,0,cmd_guiMX170,528
+PicoMite,command,Device,DEVICE,command,T_CMD,0,cmd_device,530
+PicoMite,command,PWM,PWM,command,T_CMD,0,cmd_pwm,531
+PicoMite,command,CSub,CSUB,command,T_CMD,0,cmd_cfunction,532
+PicoMite,command,End CSub,END CSUB,command,T_CMD,0,cmd_null,533
+PicoMite,command,SYNC,SYNC,command,T_CMD,0,cmd_sync,534
+PicoMite,command,I2C,I2C,command,T_CMD,0,cmd_i2c,535
+PicoMite,command,I2C2,I2C2,command,T_CMD,0,cmd_i2c2,536
+PicoMite,command,RTC,RTC,command,T_CMD,0,cmd_rtc,537
+PicoMite,command,Math,MATH,command,T_CMD,0,cmd_math,538
+PicoMite,command,Memory,MEMORY,command,T_CMD,0,cmd_memory,539
+PicoMite,command,Option,OPTION,command,T_CMD,0,cmd_option,540
+PicoMite,command,Pause,PAUSE,command,T_CMD,0,cmd_pause,541
+PicoMite,command,Timer,TIMER,"command,function",T_CMD | T_FUN,0,cmd_timer,542
+PicoMite,command,Date$,DATE$,"command,function",T_CMD | T_FUN,0,cmd_date,543
+PicoMite,command,Time$,TIME$,"command,function",T_CMD | T_FUN,0,cmd_time,544
+PicoMite,command,IReturn,IRETURN,command,T_CMD,0,cmd_ireturn,545
+PicoMite,command,Poke,POKE,command,T_CMD,0,cmd_poke,546
+PicoMite,command,SetTick,SETTICK,command,T_CMD,0,cmd_settick,547
+PicoMite,command,WatchDog,WATCHDOG,command,T_CMD,0,cmd_watchdog,548
+PicoMite,command,CPU,CPU,command,T_CMD,0,cmd_cpu,549
+PicoMite,command,Sort,SORT,command,T_CMD,0,cmd_sort,550
+PicoMite,command,DefineFont,DEFINEFONT,command,T_CMD,0,cmd_cfunction,551
+PicoMite,command,End DefineFont,END DEFINEFONT,command,T_CMD,0,cmd_null,552
+PicoMite,command,LongString,LONGSTRING,command,T_CMD,0,cmd_longString,553
+PicoMite,command,Interrupt,INTERRUPT,command,T_CMD,0,cmd_csubinterrupt,554
+PicoMite,command,Library,LIBRARY,command,T_CMD,0,cmd_library,555
+PicoMite,command,OneWire,ONEWIRE,command,T_CMD,0,cmd_onewire,556
+PicoMite,command,TEMPR START,TEMPR START,command,T_CMD,0,cmd_ds18b20,557
+PicoMite,command,SPI,SPI,command,T_CMD,0,cmd_spi,558
+PicoMite,command,SPI2,SPI2,command,T_CMD,0,cmd_spi2,559
+PicoMite,command,Colour Map,COLOUR MAP,command,T_CMD,0,cmd_colourmap,560
+PicoMite,command,Cat,CAT,command,T_CMD,0,cmd_inc,561
+PicoMite,command,Color,COLOR,command,T_CMD,0,cmd_colour,562
+PicoMite,command,Files,FILES,command,T_CMD,0,cmd_files,563
+PicoMite,command,Text,TEXT,command,T_CMD,0,cmd_text,564
+PicoMite,command,Autosave,AUTOSAVE,command,T_CMD,0,cmd_autosave,565
+PicoMite,command,WS2812,WS2812,command,T_CMD,0,cmd_WS2812,566
+PicoMite,command,Keypad,KEYPAD,command,T_CMD,0,cmd_keypad,567
+PicoMite,command,Humid,HUMID,command,T_CMD,0,cmd_DHT22,568
+PicoMite,command,LCD,LCD,command,T_CMD,0,cmd_lcd,569
+PicoMite,command,Wii Classic,WII CLASSIC,command,T_CMD,0,cmd_Classic,570
+PicoMite,command,Wii Nunchuck,WII NUNCHUCK,command,T_CMD,0,cmd_Nunchuck,571
+PicoMite,command,Wii,WII,command,T_CMD,0,cmd_Classic,572
+PicoMite,command,Servo,SERVO,command,T_CMD,0,cmd_Servo,573
+PicoMite,command,Mouse,MOUSE,command,T_CMD,0,cmd_mouse,574
+PicoMite,command,Chain,CHAIN,command,T_CMD,0,cmd_chain,575
+PicoMite,command,_wrap target,_WRAP TARGET,command,T_CMD,0,cmd_wraptarget,576
+PicoMite,command,_wrap,_WRAP,command,T_CMD,0,cmd_wrap,577
+PicoMite,command,_line,_LINE,command,T_CMD,0,cmd_PIOline,578
+PicoMite,command,_program,_PROGRAM,command,T_CMD,0,cmd_program,579
+PicoMite,command,_end program,_END PROGRAM,command,T_CMD,0,cmd_endprogram,580
+PicoMite,command,_side set,_SIDE SET,command,T_CMD,0,cmd_sideset,581
+PicoMite,command,_label,_LABEL,command,T_CMD,0,cmd_label,582
+PicoMite,command,Jmp,JMP,command,T_CMD,0,cmd_jmp,583
+PicoMite,command,Wait,WAIT,command,T_CMD,0,cmd_wait,584
+PicoMite,command,In,IN,command,T_CMD,0,cmd_in,585
+PicoMite,command,Out,OUT,command,T_CMD,0,cmd_out,586
+PicoMite,command,Push,PUSH,command,T_CMD,0,cmd_push,587
+PicoMite,command,Pull,PULL,command,T_CMD,0,cmd_pull,588
+PicoMite,command,Mov,MOV,command,T_CMD,0,cmd_mov,589
+PicoMite,command,Nop,NOP,command,T_CMD,0,cmd_nop,590
+PicoMite,command,IRQ SET,IRQ SET,command,T_CMD,0,cmd_irqset,591
+PicoMite,command,IRQ WAIT,IRQ WAIT,command,T_CMD,0,cmd_irqwait,592
+PicoMite,command,IRQ CLEAR,IRQ CLEAR,command,T_CMD,0,cmd_irqclear,593
+PicoMite,command,IRQ NOWAIT,IRQ NOWAIT,command,T_CMD,0,cmd_irqnowait,594
+PicoMite,command,IRQ PREV,IRQ PREV,command,T_CMD,0,cmd_irqprev,595
+PicoMite,command,IRQ NEXT,IRQ NEXT,command,T_CMD,0,cmd_irqnext,596
+PicoMite,command,IRQ,IRQ,command,T_CMD,0,cmd_irq,597
+PicoMite,command,Set,SET,command,T_CMD,0,cmd_set,598
+PicoMite,command,Byte(,BYTE,"command,function",T_CMD | T_FUN,0,cmd_byte,599
+PicoMite,command,Flag(,FLAG,"command,function",T_CMD | T_FUN,0,cmd_flag,600
+PicoMite,command,TILE,TILE,command,T_CMD,0,cmd_tile,602
+PicoMite,command,MODE,MODE,command,T_CMD,0,cmd_mode,603
+PicoMite,command,RESOLUTION,RESOLUTION,command,T_CMD,0,cmd_resolution,605
+PicoMite,command,Camera,CAMERA,command,T_CMD,0,cmd_camera,608
+PicoMite,command,Map(,MAP,"command,function",T_CMD | T_FUN,0,cmd_map,610
+PicoMite,command,Map,MAP,command,T_CMD,0,cmd_map,611
+PicoMite,command,Refresh,REFRESH,command,T_CMD,0,cmd_refresh,614
+PicoMite,command,CtrlVal(,CTRLVAL,"command,function",T_CMD | T_FUN,0,cmd_ctrlval,617
+PicoMite,command,Backlight,BACKLIGHT,command,T_CMD,0,cmd_backlight,620
+PicoMite,command,WEB,WEB,command,T_CMD,0,cmd_web,630
+PicoMite,command,Draw3D,DRAW3D,command,T_CMD,0,cmd_3D,634
+PicoMite,command,Update Firmware,UPDATE FIRMWARE,command,T_CMD,0,cmd_update,642
+PicoMite,command,Gamepad,GAMEPAD,command,T_CMD,0,cmd_gamepad,644
+PicoMite,command,Configure,CONFIGURE,command,T_CMD,0,cmd_configure,646
+PicoMite,command,Colour,COLOUR,command,T_CMD,0,cmd_colour,647
+PicoMite,command,CMM2 Load,CMM2 LOAD,command,T_CMD,0,cmd_loadCMM2,649
+PicoMite,command,CMM2 Run,CMM2 RUN,command,T_CMD,0,cmd_RunCMM2,650
+PicoMite,command,Randomize,RANDOMIZE,command,T_CMD,0,cmd_null,651
+PicoMite,command,Ram,RAM,command,T_CMD,0,cmd_psram,652
+PicoMite,command,Randomize,RANDOMIZE,command,T_CMD,0,cmd_randomize,654
+PicoMite,command,Bit(,BIT,"command,function",T_CMD | T_FUN,0,cmd_bit,656
+PicoMite,command,Flags,FLAGS,"command,function",T_CMD | T_FUN,0,cmd_flags,657
+PicoMite,command,Help,HELP,"command,function",T_CMD | T_FUN,0,cmd_help,659
+PicoMite,command,Array Slice,ARRAY SLICE,command,T_CMD,0,cmd_slice,661
+PicoMite,command,Array Insert,ARRAY INSERT,command,T_CMD,0,cmd_insert,662
+PicoMite,command,Array Add,ARRAY ADD,command,T_CMD,0,cmd_add,663
+PicoMite,command,Array Set,ARRAY SET,command,T_CMD,0,cmd_arrayset,664
+PicoMite,command,Fill,FILL,command,T_CMD,0,cmd_fill,670
+PicoMite,command,YModem,YMODEM,command,T_CMD,0,cmd_xmodem,672
+PicoMite,command,Turtle,TURTLE,command,T_CMD,0,cmd_turtle,675
+PicoMite,command,LMid(,LMID,"command,function",T_CMD | T_FUN,0,cmd_lmid,677
+PicoMite,command,ReDim,REDIM,command,T_CMD,0,cmd_redim,678
+PicoMite,command,Bezier,BEZIER,command,T_CMD,0,cmd_bezier,679
+PicoMite,command,Tilemap,TILEMAP,command,T_CMD,0,cmd_tilemap,680
+PicoMite,command,Star,STAR,command,T_CMD,0,cmd_star,682
+PicoMite,command,Astro,ASTRO,command,T_CMD,0,cmd_star,683
+PicoMite,command,Location,LOCATION,command,T_CMD,0,cmd_locate,684
+PicoMite,command,Stepper,STEPPER,command,T_CMD,0,cmd_stepper,685
+PicoMite,command,Frame,FRAME,command,T_CMD,0,cmd_frame,686
+PicoMite,command,Ray,RAY,command,T_CMD,0,cmd_ray,689
+PicoMite,command,Type,TYPE,command,T_CMD,0,cmd_type,692
+PicoMite,command,End Type,END TYPE,command,T_CMD,0,cmd_endtype,693
+PicoMite,command,Struct,STRUCT,command,T_CMD,0,cmd_struct,694
+PicoMite,command,XModem,XMODEM,command,T_CMD,0,cmd_xmodem,696
+PicoMite,command,I2CLCD,I2CLCD,command,T_CMD,0,cmd_i2clcd,697
+PicoMite,command,Bitstream,BITSTREAM,command,T_CMD,0,cmd_bitstream,698
+PicoMite,command,OneShot,ONESHOT,command,T_CMD,0,cmd_oneshot,699
+PicoMite,command,Mandelbrot,MANDELBROT,command,T_CMD,0,cmd_mandelbrot,701
+PicoMite,command,FM,FM,command,T_CMD,0,cmd_fm,704
+PicoMite,command,Calc,CALC,command,T_CMD,0,cmd_calc,707
+PicoMite,command,Slew,SLEW,command,T_CMD,0,cmd_slew,710
+PicoMite,command,TMC22xx,TMC22XX,command,T_CMD,0,cmd_TMC22xx,711
+PicoMite,command,Keyboard,KEYBOARD,command,T_CMD,0,cmd_keyboard,714
+PicoMite,token,Not,NOT,operator,T_OPER | T_NBR | T_INT,3,op_not,729
+PicoMite,token,INV,INV,operator,T_OPER | T_NBR | T_INT,3,op_inv,730
+PicoMite,token,+,+,operator,T_OPER | T_NBR | T_INT | T_STR,2,op_add,731
+PicoMite,token,-,-,operator,T_OPER | T_NBR | T_INT,2,op_subtract,732
+PicoMite,token,^,^,operator,T_OPER | T_NBR | T_INT,0,op_exp,734
+PicoMite,token,*,*,operator,T_OPER | T_NBR | T_INT,1,op_mul,735
+PicoMite,token,/,/,operator,T_OPER | T_NBR,1,op_div,736
+PicoMite,token,\,\,operator,T_OPER | T_INT,1,op_divint,737
+PicoMite,token,Mod,MOD,operator,T_OPER | T_INT,1,op_mod,738
+PicoMite,token,<<,<<,operator,T_OPER | T_INT,4,op_shiftleft,739
+PicoMite,token,>>,>>,operator,T_OPER | T_INT,4,op_shiftright,740
+PicoMite,token,<>,<>,operator,T_OPER | T_NBR | T_INT | T_STR,5,op_ne,741
+PicoMite,token,>=,>=,operator,T_OPER | T_NBR | T_INT | T_STR,5,op_gte,742
+PicoMite,token,<=,<=,operator,T_OPER | T_NBR | T_INT | T_STR,5,op_lte,743
+PicoMite,token,<,<,operator,T_OPER | T_NBR | T_INT | T_STR,5,op_lt,744
+PicoMite,token,>,>,operator,T_OPER | T_NBR | T_INT | T_STR,5,op_gt,745
+PicoMite,token,=,=,operator,T_OPER | T_NBR | T_INT | T_STR,6,op_equal,746
+PicoMite,token,And,AND,operator,T_OPER | T_INT,7,op_and,747
+PicoMite,token,Or,OR,operator,T_OPER | T_INT,7,op_or,748
+PicoMite,token,Xor,XOR,operator,T_OPER | T_INT,7,op_xor,749
+PicoMite,token,ACos(,ACOS,function,T_FUN | T_NBR,0,fun_acos,750
+PicoMite,token,Abs(,ABS,function,T_FUN | T_NBR | T_INT,0,fun_abs,751
+PicoMite,token,Asc(,ASC,function,T_FUN | T_INT,0,fun_asc,752
+PicoMite,token,ASin(,ASIN,function,T_FUN | T_NBR,0,fun_asin,753
+PicoMite,token,Atn(,ATN,function,T_FUN | T_NBR,0,fun_atn,754
+PicoMite,token,Atan2(,ATAN2,function,T_FUN | T_NBR,0,fun_atan2,755
+PicoMite,token,Bit(,BIT,function,T_FUN | T_INT,0,fun_bit,756
+PicoMite,token,Bound(,BOUND,function,T_FUN | T_INT,0,fun_bound,758
+PicoMite,token,Choice(,CHOICE,function,T_FUN | T_STR | T_INT | T_NBR,0,fun_ternary,759
+PicoMite,token,Chr$(,CHR$,function,T_FUN | T_STR,0,fun_chr,760
+PicoMite,token,Cint(,CINT,function,T_FUN | T_INT,0,fun_cint,761
+PicoMite,token,Cos(,COS,function,T_FUN | T_NBR,0,fun_cos,762
+PicoMite,token,Deg(,DEG,function,T_FUN | T_NBR,0,fun_deg,763
+PicoMite,token,Exp(,EXP,function,T_FUN | T_NBR,0,fun_exp,764
+PicoMite,token,Field$(,FIELD$,function,T_FUN | T_STR,0,fun_field,765
+PicoMite,token,Fix(,FIX,function,T_FUN | T_INT,0,fun_fix,766
+PicoMite,token,Trim$(,TRIM$,function,T_FUN | T_STR,0,fun_trim,767
+PicoMite,token,Inkey$,INKEY$,function,T_FNA | T_STR,0,fun_inkey,769
+PicoMite,token,Instr(,INSTR,function,T_FUN | T_INT,0,fun_instr,770
+PicoMite,token,Int(,INT,function,T_FUN | T_INT,0,fun_int,771
+PicoMite,token,SChange$(,SCHANGE$,function,T_FUN | T_STR,0,fun_schange,773
+PicoMite,token,DateTime$(,DATETIME$,function,T_FUN | T_STR,0,fun_datetime,775
+PicoMite,token,Len(,LEN,function,T_FUN | T_INT,0,fun_len,776
+PicoMite,token,Log(,LOG,function,T_FUN | T_NBR,0,fun_log,777
+PicoMite,token,Mid$(,MID$,function,T_FUN | T_STR,0,fun_mid,778
+PicoMite,token,TEMPR(,TEMPR,function,T_FUN | T_NBR,0,fun_ds18b20,779
+PicoMite,token,SPI(,SPI,function,T_FUN | T_INT,0,fun_spi,780
+PicoMite,token,base$(,BASE$,function,T_FUN | T_STR,0,fun_base,781
+PicoMite,token,LInput(,LINPUT,function,T_FUN | T_INT,0,fun_linputstr,782
+PicoMite,token,Pi,PI,function,T_FNA | T_NBR,0,fun_pi,783
+PicoMite,token,Pos,POS,function,T_FNA | T_INT,0,fun_pos,784
+PicoMite,token,Rad(,RAD,function,T_FUN | T_NBR,0,fun_rad,785
+PicoMite,token,Epoch(,EPOCH,function,T_FUN | T_INT,0,fun_epoch,787
+PicoMite,token,Rnd(,RND,function,T_FUN | T_NBR,0,fun_rnd,788
+PicoMite,token,Rnd,RND,function,T_FNA | T_NBR,0,fun_rnd,789
+PicoMite,token,Sgn(,SGN,function,T_FUN | T_INT,0,fun_sgn,790
+PicoMite,token,Sin(,SIN,function,T_FUN | T_NBR,0,fun_sin,791
+PicoMite,token,Space$(,SPACE$,function,T_FUN | T_STR,0,fun_space,792
+PicoMite,token,Sqr(,SQR,function,T_FUN | T_NBR,0,fun_sqr,793
+PicoMite,token,Str$(,STR$,function,T_FUN | T_STR,0,fun_str,794
+PicoMite,token,String$(,STRING$,function,T_FUN | T_STR,0,fun_string,795
+PicoMite,token,Tab(,TAB,function,T_FUN | T_STR,0,fun_tab,796
+PicoMite,token,Tan(,TAN,function,T_FUN | T_NBR,0,fun_tan,797
+PicoMite,token,KeyDown(,KEYDOWN,function,T_FUN | T_INT,0,fun_keydown,799
+PicoMite,token,Val(,VAL,function,T_FUN | T_NBR | T_INT,0,fun_val,800
+PicoMite,token,Eval(,EVAL,function,T_FUN | T_NBR | T_INT | T_STR,0,fun_eval,801
+PicoMite,token,TopBottom(,TOPBOTTOM,function,T_FUN | T_NBR,0,fun_max_min,804
+PicoMite,token,Format$(,FORMAT$,function,T_FUN | T_STR,0,fun_format,805
+PicoMite,token,Bin2str$(,BIN2STR$,function,T_FUN | T_STR,0,fun_bin2str,806
+PicoMite,token,Str2bin(,STR2BIN,function,T_FUN | T_NBR | T_INT,0,fun_str2bin,807
+PicoMite,token,Call(,CALL,function,T_FUN | T_STR | T_INT | T_NBR,0,fun_call,808
+PicoMite,token,For,FOR,keyword,T_NA,0,op_invalid,809
+PicoMite,token,Else,ELSE,keyword,T_NA,0,op_invalid,810
+PicoMite,token,GoSub,GOSUB,keyword,T_NA,0,op_invalid,811
+PicoMite,token,GoTo,GOTO,keyword,T_NA,0,op_invalid,812
+PicoMite,token,Step,STEP,keyword,T_NA,0,op_invalid,813
+PicoMite,token,Then,THEN,keyword,T_NA,0,op_invalid,814
+PicoMite,token,To,TO,keyword,T_NA,0,op_invalid,815
+PicoMite,token,Until,UNTIL,keyword,T_NA,0,op_invalid,816
+PicoMite,token,While,WHILE,keyword,T_NA,0,op_invalid,817
+PicoMite,token,Eof(,EOF,function,T_FUN | T_INT,0,fun_eof,818
+PicoMite,token,Loc(,LOC,function,T_FUN | T_INT,0,fun_loc,819
+PicoMite,token,Lof(,LOF,function,T_FUN | T_INT,0,fun_lof,820
+PicoMite,token,Cwd$,CWD$,function,T_FNA | T_STR,0,fun_cwd,821
+PicoMite,token,As,AS,keyword,T_NA,0,op_invalid,822
+PicoMite,token,Input$(,INPUT$,function,T_FUN | T_STR,0,fun_inputstr,823
+PicoMite,token,Dir$(,DIR$,function,T_FUN | T_STR,0,fun_dir,824
+PicoMite,token,Pio(,PIO,function,T_FUN | T_INT,0,fun_pio,825
+PicoMite,token,RGB(,RGB,function,T_FUN | T_INT,0,fun_rgb,826
+PicoMite,token,Pixel(,PIXEL,function,T_FUN | T_INT,0,fun_pixel,827
+PicoMite,token,SPI2(,SPI2,function,T_FUN | T_INT,0,fun_spi2,828
+PicoMite,token,DEVICE(,DEVICE,function,T_FUN | T_INT | T_NBR | T_STR,0,fun_dev,829
+PicoMite,token,@(,@,function,T_FUN | T_STR,0,fun_at,830
+PicoMite,token,Pin(,PIN,function,T_FUN | T_NBR | T_INT,0,fun_pin,831
+PicoMite,token,Port(,PORT,function,T_FUN | T_INT,0,fun_port,832
+PicoMite,token,Distance(,DISTANCE,function,T_FUN | T_NBR,0,fun_distance,833
+PicoMite,token,Pulsin(,PULSIN,function,T_FUN | T_INT,0,fun_pulsin,834
+PicoMite,token,GPS(,GPS,function,T_FUN | T_NBR | T_INT | T_STR,0,fun_GPS,835
+PicoMite,token,Byte(,BYTE,function,T_FUN | T_INT,0,fun_byte,836
+PicoMite,token,Math(,MATH,function,T_FUN | T_NBR | T_INT,0,fun_math,837
+PicoMite,token,Timer,TIMER,function,T_FNA | T_NBR,0,fun_timer,838
+PicoMite,token,LInStr(,LINSTR,function,T_FUN | T_INT,0,fun_LInstr,839
+PicoMite,token,LCompare(,LCOMPARE,function,T_FUN | T_INT,0,fun_LCompare,840
+PicoMite,token,LLen(,LLEN,function,T_FUN | T_INT,0,fun_LLen,841
+PicoMite,token,LGetStr$(,LGETSTR$,function,T_FUN | T_STR,0,fun_LGetStr,842
+PicoMite,token,LGetByte(,LGETBYTE,function,T_FUN | T_INT,0,fun_LGetByte,843
+PicoMite,token,Date$,DATE$,function,T_FNA | T_STR,0,fun_date,844
+PicoMite,token,Day$(,DAY$,function,T_FUN | T_STR,0,fun_day,845
+PicoMite,token,Peek(,PEEK,function,T_FUN | T_INT | T_STR | T_NBR,0,fun_peek,846
+PicoMite,token,Time$,TIME$,function,T_FNA | T_STR,0,fun_time,847
+PicoMite,token,sprite(,SPRITE,function,T_FUN | T_INT | T_NBR,0,fun_sprite,848
+PicoMite,token,Flag(,FLAG,function,T_FUN | T_INT,0,fun_flag,849
+PicoMite,token,MM.Info(,MM.INFO,function,T_FUN | T_INT | T_NBR | T_STR,0,fun_info,850
+PicoMite,token,~(,~,function,T_FUN | T_INT | T_NBR | T_STR,0,fun_tilde,851
+PicoMite,token,DRAW3D(,DRAW3D,function,T_FUN | T_INT,0,fun_3D,854
+PicoMite,token,GetScanLine,GETSCANLINE,function,T_FNA | T_INT,0,fun_getscanline,856
+PicoMite,token,Map(,MAP,function,T_FUN | T_INT,0,fun_map,857
+PicoMite,token,Touch(,TOUCH,function,T_FUN | T_INT,0,fun_touch,868
+PicoMite,token,Json$(,JSON$,function,T_FUN | T_STR,0,fun_json,871
+PicoMite,token,MsgBox(,MSGBOX,function,T_FUN | T_INT,0,fun_msgbox,874
+PicoMite,token,CtrlVal(,CTRLVAL,function,T_FUN | T_NBR | T_STR,0,fun_ctrlval,875
+PicoMite,token,Click(,CLICK,function,T_FUN | T_INT,0,fun_click,881
+PicoMite,token,Struct(,STRUCT,function,T_FUN | T_INT,0,fun_struct,887
+PicoMite,token,Frame(,FRAME,function,T_FUN | T_INT | T_NBR | T_STR,0,fun_frame,890
+PicoMite,token,Ray(,RAY,function,T_FUN | T_INT | T_NBR,0,fun_ray,893
+PicoMite,token,Tilemap(,TILEMAP,function,T_FUN | T_INT,0,fun_tilemap,896

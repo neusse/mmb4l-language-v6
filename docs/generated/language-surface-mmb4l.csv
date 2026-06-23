@@ -1,0 +1,245 @@
+source,table,name,normalized,surfaces,flags,precedence,handler,line
+MMB4L,command,Arc,ARC,command,T_CMD,0,cmd_arc,63
+MMB4L,command,AutoSave,AUTOSAVE,command,T_CMD,0,cmd_autosave,64
+MMB4L,command,Blit,BLIT,command,T_CMD,0,cmd_blit,65
+MMB4L,command,Box,BOX,command,T_CMD,0,cmd_box,66
+MMB4L,command,Call,CALL,command,T_CMD,0,cmd_call,67
+MMB4L,command,Case Else,CASE ELSE,command,T_CMD,0,cmd_case,68
+MMB4L,command,Case,CASE,command,T_CMD,0,cmd_case,69
+MMB4L,command,Cat,CAT,command,T_CMD,0,cmd_inc,70
+MMB4L,command,Chdir,CHDIR,command,T_CMD,0,cmd_chdir,71
+MMB4L,command,Circle,CIRCLE,command,T_CMD,0,cmd_circle,72
+MMB4L,command,Clear,CLEAR,command,T_CMD,0,cmd_clear,73
+MMB4L,command,Close,CLOSE,command,T_CMD,0,cmd_close,74
+MMB4L,command,Cls,CLS,command,T_CMD,0,cmd_cls,75
+MMB4L,command,Color,COLOR,command,T_CMD,0,cmd_colour,76
+MMB4L,command,Colour,COLOUR,command,T_CMD,0,cmd_colour,77
+MMB4L,command,Console,CONSOLE,command,T_CMD,0,cmd_console,78
+MMB4L,command,Const,CONST,command,T_CMD,0,cmd_const,79
+MMB4L,command,Continue,CONTINUE,command,T_CMD,0,cmd_continue,80
+MMB4L,command,Controller,CONTROLLER,command,T_CMD,0,cmd_device,81
+MMB4L,command,Copy,COPY,command,T_CMD,0,cmd_copy,82
+MMB4L,command,CSub,CSUB,command,T_CMD,0,cmd_cfunction,83
+MMB4L,command,Cursor,CURSOR,command,T_CMD,0,cmd_cursor,84
+MMB4L,command,Data,DATA,command,T_CMD,0,cmd_null,85
+MMB4L,command,DefineFont,DEFINEFONT,command,T_CMD,0,cmd_cfunction,86
+MMB4L,command,Device,DEVICE,command,T_CMD,0,cmd_device,87
+MMB4L,command,Dim,DIM,command,T_CMD,0,cmd_dim,88
+MMB4L,command,Do,DO,command,T_CMD,0,cmd_do,89
+MMB4L,command,Edit,EDIT,command,T_CMD,0,cmd_edit,90
+MMB4L,command,ElseIf,ELSEIF,command,T_CMD,0,cmd_else,91
+MMB4L,command,Else If,ELSE IF,command,T_CMD,0,cmd_else,92
+MMB4L,command,Else,ELSE,command,T_CMD,0,cmd_else,93
+MMB4L,command,End,END,command,T_CMD,0,cmd_end,94
+MMB4L,command,End CSub,END CSUB,command,T_CMD,0,cmd_null,95
+MMB4L,command,End DefineFont,END DEFINEFONT,command,T_CMD,0,cmd_null,96
+MMB4L,command,End Function,END FUNCTION,command,T_CMD,0,cmd_endfun,97
+MMB4L,command,EndIf,ENDIF,command,T_CMD,0,cmd_null,98
+MMB4L,command,End If,END IF,command,T_CMD,0,cmd_null,99
+MMB4L,command,End Select,END SELECT,command,T_CMD,0,cmd_null,100
+MMB4L,command,End Sub,END SUB,command,T_CMD,0,cmd_return,101
+MMB4L,command,Erase,ERASE,command,T_CMD,0,cmd_erase,102
+MMB4L,command,Error,ERROR,command,T_CMD,0,cmd_error,103
+MMB4L,command,Execute,EXECUTE,command,T_CMD,0,cmd_execute,104
+MMB4L,command,Exit Do,EXIT DO,command,T_CMD,0,cmd_exit,105
+MMB4L,command,Exit For,EXIT FOR,command,T_CMD,0,cmd_exitfor,106
+MMB4L,command,Exit Function,EXIT FUNCTION,command,T_CMD,0,cmd_endfun,107
+MMB4L,command,Exit Sub,EXIT SUB,command,T_CMD,0,cmd_return,108
+MMB4L,command,Exit,EXIT,command,T_CMD,0,cmd_exit,109
+MMB4L,command,Files,FILES,command,T_CMD,0,cmd_files,110
+MMB4L,command,Flash,FLASH,command,T_CMD,0,cmd_flash,111
+MMB4L,command,Font,FONT,command,T_CMD,0,cmd_font,112
+MMB4L,command,For,FOR,command,T_CMD,0,cmd_for,113
+MMB4L,command,Function,FUNCTION,command,T_CMD,0,cmd_subfun,114
+MMB4L,command,FrameBuffer,FRAMEBUFFER,command,T_CMD,0,cmd_framebuffer,115
+MMB4L,command,Gamepad,GAMEPAD,command,T_CMD,0,cmd_gamepad,116
+MMB4L,command,GoSub,GOSUB,command,T_CMD,0,cmd_gosub,117
+MMB4L,command,GoTo,GOTO,command,T_CMD,0,cmd_goto,118
+MMB4L,command,Graphics,GRAPHICS,command,T_CMD,0,cmd_graphics,119
+MMB4L,command,Gui,GUI,command,T_CMD,0,cmd_gui,120
+MMB4L,command,If,IF,command,T_CMD,0,cmd_if,121
+MMB4L,command,Image,IMAGE,command,T_CMD,0,cmd_image,122
+MMB4L,command,Inc,INC,command,T_CMD,0,cmd_inc,123
+MMB4L,command,Input,INPUT,command,T_CMD,0,cmd_input,124
+MMB4L,command,IReturn,IRETURN,command,T_CMD,0,cmd_ireturn,125
+MMB4L,command,Kill,KILL,command,T_CMD,0,cmd_kill,126
+MMB4L,command,Let,LET,command,T_CMD,0,cmd_let,127
+MMB4L,command,Line,LINE,command,T_CMD,0,cmd_line,128
+MMB4L,command,Line Input,LINE INPUT,command,T_CMD,0,cmd_lineinput,129
+MMB4L,command,List,LIST,command,T_CMD,0,cmd_list,130
+MMB4L,command,Load,LOAD,command,T_CMD,0,cmd_load,131
+MMB4L,command,Local,LOCAL,command,T_CMD,0,cmd_dim,132
+MMB4L,command,LongString,LONGSTRING,command,T_CMD,0,cmd_longstring,133
+MMB4L,command,Loop,LOOP,command,T_CMD,0,cmd_loop,134
+MMB4L,command,Math,MATH,command,T_CMD,0,cmd_math,135
+MMB4L,command,Memory,MEMORY,command,T_CMD,0,cmd_memory,136
+MMB4L,command,Mid$(,MID$,"command,function",T_CMD | T_FUN,0,cmd_mid,137
+MMB4L,command,Mkdir,MKDIR,command,T_CMD,0,cmd_mkdir,138
+MMB4L,command,MmDebug,MMDEBUG,command,T_CMD,0,cmd_mmdebug,139
+MMB4L,command,Mode,MODE,command,T_CMD,0,cmd_mode,140
+MMB4L,command,New,NEW,command,T_CMD,0,cmd_new,141
+MMB4L,command,Next,NEXT,command,T_CMD,0,cmd_next,142
+MMB4L,command,On,ON,command,T_CMD,0,cmd_on,143
+MMB4L,command,Open,OPEN,command,T_CMD,0,cmd_open,144
+MMB4L,command,Option,OPTION,command,T_CMD,0,cmd_option,145
+MMB4L,command,Page,PAGE,command,T_CMD,0,cmd_page,146
+MMB4L,command,Pause,PAUSE,command,T_CMD,0,cmd_pause,147
+MMB4L,command,Play,PLAY,command,T_CMD,0,cmd_play,148
+MMB4L,command,Pin(,PIN,"command,function",T_CMD | T_FUN,0,cmd_pin,149
+MMB4L,command,Pixel,PIXEL,command,T_CMD,0,cmd_pixel,150
+MMB4L,command,Polygon,POLYGON,command,T_CMD,0,cmd_polygon,151
+MMB4L,command,Poke,POKE,command,T_CMD,0,cmd_poke,152
+MMB4L,command,Print,PRINT,command,T_CMD,0,cmd_print,153
+MMB4L,command,Pulse,PULSE,command,T_CMD,0,cmd_pulse,154
+MMB4L,command,Quit,QUIT,command,T_CMD,0,cmd_quit,155
+MMB4L,command,Randomize,RANDOMIZE,command,T_CMD,0,cmd_randomize,156
+MMB4L,command,RBox,RBOX,command,T_CMD,0,cmd_rbox,157
+MMB4L,command,Read,READ,command,T_CMD,0,cmd_read,158
+MMB4L,command,Rem,REM,command,T_CMD,0,cmd_null,159
+MMB4L,command,Rename,RENAME,command,T_CMD,0,cmd_rename,160
+MMB4L,command,Restore,RESTORE,command,T_CMD,0,cmd_restore,161
+MMB4L,command,Return,RETURN,command,T_CMD,0,cmd_return,162
+MMB4L,command,Rmdir,RMDIR,command,T_CMD,0,cmd_rmdir,163
+MMB4L,command,Run,RUN,command,T_CMD,0,cmd_run,164
+MMB4L,command,Seek,SEEK,command,T_CMD,0,cmd_seek,165
+MMB4L,command,Select Case,SELECT CASE,command,T_CMD,0,cmd_select,166
+MMB4L,command,SetEnv,SETENV,command,T_CMD,0,cmd_setenv,167
+MMB4L,command,SetPin,SETPIN,command,T_CMD,0,cmd_setpin,168
+MMB4L,command,SetTick,SETTICK,command,T_CMD,0,cmd_settick,169
+MMB4L,command,SetTitle,SETTITLE,command,T_CMD,0,cmd_settitle,170
+MMB4L,command,Sort,SORT,command,T_CMD,0,cmd_sort,171
+MMB4L,command,Sprite,SPRITE,command,T_CMD,0,cmd_sprite,172
+MMB4L,command,Static,STATIC,command,T_CMD,0,cmd_dim,173
+MMB4L,command,Sub,SUB,command,T_CMD,0,cmd_subfun,174
+MMB4L,command,System,SYSTEM,command,T_CMD,0,cmd_system,175
+MMB4L,command,Text,TEXT,command,T_CMD,0,cmd_text,176
+MMB4L,command,Timer,TIMER,"command,function",T_CMD | T_FUN,0,cmd_timer,177
+MMB4L,command,Trace,TRACE,command,T_CMD,0,cmd_trace,178
+MMB4L,command,Triangle,TRIANGLE,command,T_CMD,0,cmd_triangle,179
+MMB4L,command,TrOff,TROFF,command,T_CMD,0,cmd_troff,180
+MMB4L,command,TrOn,TRON,command,T_CMD,0,cmd_tron,181
+MMB4L,command,Wend,WEND,command,T_CMD,0,cmd_loop,182
+MMB4L,command,While,WHILE,command,T_CMD,0,cmd_do,183
+MMB4L,command,XModem,XMODEM,command,T_CMD,0,cmd_xmodem,184
+MMB4L,token,@(,@,function,T_FUN | T_STR,0,fun_at,64
+MMB4L,token,Abs(,ABS,function,T_FUN | T_NBR | T_INT,0,fun_abs,65
+MMB4L,token,ACos(,ACOS,function,T_FUN | T_NBR,0,fun_acos,66
+MMB4L,token,Asc(,ASC,function,T_FUN | T_INT,0,fun_asc,67
+MMB4L,token,ASin(,ASIN,function,T_FUN | T_NBR,0,fun_asin,68
+MMB4L,token,Atan2(,ATAN2,function,T_FUN | T_NBR,0,fun_atan2,69
+MMB4L,token,Atn(,ATN,function,T_FUN | T_NBR,0,fun_atn,70
+MMB4L,token,Bin$(,BIN$,function,T_FUN | T_STR,0,fun_bin,71
+MMB4L,token,Bin2Str$(,BIN2STR$,function,T_FUN | T_STR,0,fun_bin2str,72
+MMB4L,token,Bound(,BOUND,function,T_FUN | T_INT,0,fun_bound,73
+MMB4L,token,Call(,CALL,function,T_FUN | T_STR | T_INT | T_NBR,0,fun_call,74
+MMB4L,token,Choice(,CHOICE,function,T_FUN | T_STR | T_INT | T_NBR,0,fun_choice,75
+MMB4L,token,Chr$(,CHR$,function,T_FUN | T_STR,0,fun_chr,76
+MMB4L,token,Cint(,CINT,function,T_FUN | T_INT,0,fun_cint,77
+MMB4L,token,Classic(,CLASSIC,function,T_FUN | T_INT,0,fun_classic,78
+MMB4L,token,Cos(,COS,function,T_FUN | T_NBR,0,fun_cos,79
+MMB4L,token,Cwd$,CWD$,function,T_FNA | T_STR,0,fun_cwd,80
+MMB4L,token,Date$,DATE$,function,T_FNA | T_STR,0,fun_date,81
+MMB4L,token,DateTime$(,DATETIME$,function,T_FUN | T_STR,0,fun_datetime,82
+MMB4L,token,Day$(,DAY$,function,T_FUN | T_STR,0,fun_day,83
+MMB4L,token,Deg(,DEG,function,T_FUN | T_NBR,0,fun_deg,84
+MMB4L,token,Device(,DEVICE,function,T_FUN | T_INT,0,fun_device,85
+MMB4L,token,Dir$(,DIR$,function,T_FUN | T_STR,0,fun_dir,86
+MMB4L,token,Eof(,EOF,function,T_FUN | T_INT,0,fun_eof,87
+MMB4L,token,Epoch(,EPOCH,function,T_FUN | T_INT,0,fun_epoch,88
+MMB4L,token,Eval(,EVAL,function,T_FUN | T_NBR | T_INT | T_STR,0,fun_eval,89
+MMB4L,token,Exp(,EXP,function,T_FUN | T_NBR,0,fun_exp,90
+MMB4L,token,Field$(,FIELD$,function,T_FUN | T_STR,0,fun_field,91
+MMB4L,token,Fix(,FIX,function,T_FUN | T_INT,0,fun_fix,92
+MMB4L,token,Format$(,FORMAT$,function,T_FUN | T_STR,0,fun_format,93
+MMB4L,token,Gamepad(,GAMEPAD,function,T_FUN | T_INT,0,fun_gamepad,94
+MMB4L,token,Hex$(,HEX$,function,T_FUN | T_STR,0,fun_hex,95
+MMB4L,token,Inkey$,INKEY$,function,T_FNA | T_STR,0,fun_inkey,96
+MMB4L,token,Input$(,INPUT$,function,T_FUN | T_STR,0,fun_inputstr,97
+MMB4L,token,Instr(,INSTR,function,T_FUN | T_INT,0,fun_instr,98
+MMB4L,token,Int(,INT,function,T_FUN | T_INT,0,fun_int,99
+MMB4L,token,Json$(,JSON$,function,T_FUN | T_STR,0,fun_json,100
+MMB4L,token,Keydown(,KEYDOWN,function,T_FUN | T_INT,0,fun_keydown,101
+MMB4L,token,LCase$(,LCASE$,function,T_FUN | T_STR,0,fun_lcase,102
+MMB4L,token,LCompare(,LCOMPARE,function,T_FUN | T_INT,0,fun_lcompare,103
+MMB4L,token,Left$(,LEFT$,function,T_FUN | T_STR,0,fun_left,104
+MMB4L,token,Len(,LEN,function,T_FUN | T_INT,0,fun_len,105
+MMB4L,token,LGetByte(,LGETBYTE,function,T_FUN | T_INT,0,fun_lgetbyte,106
+MMB4L,token,LGetStr$(,LGETSTR$,function,T_FUN | T_STR,0,fun_lgetstr,107
+MMB4L,token,LInStr(,LINSTR,function,T_FUN | T_INT,0,fun_linstr,108
+MMB4L,token,LLen(,LLEN,function,T_FUN | T_INT,0,fun_llen,109
+MMB4L,token,Loc(,LOC,function,T_FUN | T_INT,0,fun_loc,110
+MMB4L,token,Lof(,LOF,function,T_FUN | T_INT,0,fun_lof,111
+MMB4L,token,Log(,LOG,function,T_FUN | T_NBR,0,fun_log,112
+MMB4L,token,Math(,MATH,function,T_FUN | T_NBR,0,fun_math,113
+MMB4L,token,Max(,MAX,function,T_FUN | T_NBR,0,fun_max,114
+MMB4L,token,Mid$(,MID$,function,T_FUN | T_STR,0,fun_mid,115
+MMB4L,token,Min(,MIN,function,T_FUN | T_NBR,0,fun_min,116
+MMB4L,token,MM.CmdLine$,MM.CMDLINE$,function,T_FNA | T_STR,0,fun_mmcmdline,117
+MMB4L,token,MM.Device$,MM.DEVICE$,function,T_FNA | T_STR,0,fun_mmdevice,118
+MMB4L,token,MM.ErrMsg$,MM.ERRMSG$,function,T_FNA | T_STR,0,fun_errmsg,119
+MMB4L,token,MM.Errno,MM.ERRNO,function,T_FNA | T_INT,0,fun_errno,120
+MMB4L,token,MM.HRes,MM.HRES,function,T_FNA | T_INT,0,fun_hres,121
+MMB4L,token,MM.Info$(,MM.INFO$,function,T_FUN | T_STR | T_INT | T_NBR,0,fun_mminfo,122
+MMB4L,token,MM.Info(,MM.INFO,function,T_FUN | T_STR | T_INT | T_NBR,0,fun_mminfo,123
+MMB4L,token,MM.Ver,MM.VER,function,T_FNA | T_INT,0,fun_version,124
+MMB4L,token,MM.VRes,MM.VRES,function,T_FNA | T_INT,0,fun_vres,125
+MMB4L,token,Nunchuk(,NUNCHUK,function,T_FUN | T_INT,0,fun_classic,126
+MMB4L,token,Oct$(,OCT$,function,T_FUN | T_STR,0,fun_oct,127
+MMB4L,token,Peek(,PEEK,function,T_FUN | T_INT | T_NBR,0,fun_peek,128
+MMB4L,token,Pi,PI,function,T_FNA | T_NBR,0,fun_pi,129
+MMB4L,token,Pin(,PIN,function,T_FUN | T_NBR | T_INT,0,fun_pin,130
+MMB4L,token,Port(,PORT,function,T_FUN | T_INT,0,fun_port,131
+MMB4L,token,Pos,POS,function,T_FNA | T_INT,0,fun_pos,132
+MMB4L,token,Rad(,RAD,function,T_FUN | T_NBR,0,fun_rad,133
+MMB4L,token,Rgb(,RGB,function,T_FUN | T_INT,0,fun_rgb,134
+MMB4L,token,Right$(,RIGHT$,function,T_FUN | T_STR,0,fun_right,135
+MMB4L,token,Rnd(,RND,function,T_FUN | T_NBR,0,fun_rnd,136
+MMB4L,token,Rnd,RND,function,T_FNA | T_NBR,0,fun_rnd,137
+MMB4L,token,Sgn(,SGN,function,T_FUN | T_INT,0,fun_sgn,138
+MMB4L,token,Sin(,SIN,function,T_FUN | T_NBR,0,fun_sin,139
+MMB4L,token,Space$(,SPACE$,function,T_FUN | T_STR,0,fun_space,140
+MMB4L,token,Spc(,SPC,function,T_FUN | T_STR,0,fun_space,141
+MMB4L,token,Sprite(,SPRITE,function,T_FUN | T_INT | T_NBR | T_STR,0,fun_sprite,142
+MMB4L,token,Sqr(,SQR,function,T_FUN | T_NBR,0,fun_sqr,143
+MMB4L,token,Str$(,STR$,function,T_FUN | T_STR,0,fun_str,144
+MMB4L,token,Str2Bin(,STR2BIN,function,T_FUN | T_NBR | T_INT,0,fun_str2bin,145
+MMB4L,token,String$(,STRING$,function,T_FUN | T_STR,0,fun_string,146
+MMB4L,token,Tab(,TAB,function,T_FUN | T_STR,0,fun_tab,147
+MMB4L,token,Tan(,TAN,function,T_FUN | T_NBR,0,fun_tan,148
+MMB4L,token,Time$,TIME$,function,T_FNA | T_STR,0,fun_time,149
+MMB4L,token,Timer,TIMER,function,T_FNA | T_INT,0,fun_timer,150
+MMB4L,token,UCase$(,UCASE$,function,T_FUN | T_STR,0,fun_ucase,151
+MMB4L,token,Val(,VAL,function,T_FUN | T_NBR | T_INT,0,fun_val,152
+MMB4L,token,As,AS,keyword,T_NA,0,op_invalid,154
+MMB4L,token,Else,ELSE,keyword,T_NA,0,op_invalid,155
+MMB4L,token,For,FOR,keyword,T_NA,0,op_invalid,156
+MMB4L,token,GoSub,GOSUB,keyword,T_NA,0,op_invalid,157
+MMB4L,token,GoTo,GOTO,keyword,T_NA,0,op_invalid,158
+MMB4L,token,Step,STEP,keyword,T_NA,0,op_invalid,159
+MMB4L,token,Then,THEN,keyword,T_NA,0,op_invalid,160
+MMB4L,token,To,TO,keyword,T_NA,0,op_invalid,161
+MMB4L,token,Until,UNTIL,keyword,T_NA,0,op_invalid,162
+MMB4L,token,While,WHILE,keyword,T_NA,0,op_invalid,163
+MMB4L,token,^,^,operator,T_OPER | T_NBR | T_INT,0,op_exp,165
+MMB4L,token,*,*,operator,T_OPER | T_NBR | T_INT,1,op_mul,166
+MMB4L,token,/,/,operator,T_OPER | T_NBR,1,op_div,167
+MMB4L,token,\,\,operator,T_OPER | T_INT,1,op_divint,168
+MMB4L,token,Mod,MOD,operator,T_OPER | T_INT,1,op_mod,169
+MMB4L,token,+,+,operator,T_OPER | T_NBR | T_INT | T_STR,2,op_add,170
+MMB4L,token,-,-,operator,T_OPER | T_NBR | T_INT,2,op_subtract,171
+MMB4L,token,Not,NOT,operator,T_OPER | T_NBR,3,op_not,172
+MMB4L,token,Inv,INV,operator,T_OPER | T_NBR,3,op_inv,173
+MMB4L,token,<<,<<,operator,T_OPER | T_INT,4,op_shiftleft,174
+MMB4L,token,>>,>>,operator,T_OPER | T_INT,4,op_shiftright,175
+MMB4L,token,<>,<>,operator,T_OPER | T_NBR | T_INT | T_STR,5,op_ne,176
+MMB4L,token,>=,>=,operator,T_OPER | T_NBR | T_INT | T_STR,5,op_gte,177
+MMB4L,token,=>,=>,operator,T_OPER | T_NBR | T_INT | T_STR,5,op_gte,178
+MMB4L,token,<=,<=,operator,T_OPER | T_NBR | T_INT | T_STR,5,op_lte,179
+MMB4L,token,=<,=<,operator,T_OPER | T_NBR | T_INT | T_STR,5,op_lte,180
+MMB4L,token,<,<,operator,T_OPER | T_NBR | T_INT | T_STR,5,op_lt,181
+MMB4L,token,>,>,operator,T_OPER | T_NBR | T_INT | T_STR,5,op_gt,182
+MMB4L,token,=,=,operator,T_OPER | T_NBR | T_INT | T_STR,6,op_equal,183
+MMB4L,token,And,AND,operator,T_OPER | T_INT,7,op_and,184
+MMB4L,token,Or,OR,operator,T_OPER | T_INT,7,op_or,185
+MMB4L,token,Xor,XOR,operator,T_OPER | T_INT,7,op_xor,186
+MMB4L,token,Trim$(,TRIM$,function,T_FUN | T_STR,0,fun_trim,187
