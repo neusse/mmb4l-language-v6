@@ -1,2 +1,12 @@
 *.bas linguist-language=BASIC
 *.inc linguist-language=BASIC
+
+*.sh text eol=lf
+*.cmake text eol=lf
+CMakeLists.txt text eol=lf
+*.md text eol=lf
+*.c text eol=lf
+*.h text eol=lf
+*.cxx text eol=lf
+*.hxx text eol=lf
+*.py text eol=lf

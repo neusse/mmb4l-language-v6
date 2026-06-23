@@ -1,5 +1,11 @@
 # MMBasic for Linux (MMB4L)
 
+> Fork workspace note: this checkout is being used to develop and document a
+> repeatable MMB4L language/runtime alignment project. Start with
+> [docs/README.md](docs/README.md) for the local project plan, PicoMite
+> reference map, and attribution notes. The original MMB4L README content is
+> preserved below.
+
 1. [Introduction](#1-introduction)
 2. [How do I install it ?](#2-how-do-i-install-it-)
     * [Audio configuration on the Raspberry Pi](#audio-configuration-on-the-raspberry-pi)
