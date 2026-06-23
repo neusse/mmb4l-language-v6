@@ -45,6 +45,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 // Provides all the core functions in MMBasic.
 
 #include "../Hardware_Includes.h"
+#include "../common/parse.h"
 #include "MMBasic.h"
 #include "Functions.h"
 
@@ -593,6 +594,74 @@ void fun_string(void) {
     sret = GetTempStrMemory();                                      // this will last for the life of the command
     memset(sret + 1, j, i);
     *sret = i;
+    targ = T_STR;
+}
+
+
+
+static bool fun_trim_is_in_mask(char c, const char *mask) {
+    for (int i = 1; i <= (unsigned char)mask[0]; ++i) {
+        if (mask[i] == c) return true;
+    }
+    return false;
+}
+
+
+
+// Trims characters from the left, right, or both ends of a string.
+// s$ = TRIM$( string$ [, mask$ [, where ]])
+void fun_trim(void) {
+    char default_mask[2] = { 1, ' ' };
+    char *source, *mask, *where_arg;
+    char where = 'L';
+    int start = 0, end, len;
+
+    getargs(&ep, 5, ",");
+    if (!(argc == 1 || argc == 3 || argc == 5)) ERROR_SYNTAX;
+
+    source = getstring(argv[0]);
+    mask = default_mask;
+    if (argc >= 3 && *argv[2]) {
+        mask = getstring(argv[2]);
+    }
+
+    if (argc == 5) {
+        if (checkstring(argv[4], "L")) {
+            where = 'L';
+        } else if (checkstring(argv[4], "R")) {
+            where = 'R';
+        } else if (checkstring(argv[4], "B")) {
+            where = 'B';
+        } else {
+            where_arg = getstring(argv[4]);
+            if ((unsigned char)where_arg[0] != 1) ERROR_SYNTAX;
+            where = toupper(where_arg[1]);
+            if (!(where == 'L' || where == 'R' || where == 'B')) ERROR_SYNTAX;
+        }
+    }
+
+    end = (unsigned char)source[0] - 1;
+
+    if (where == 'L' || where == 'B') {
+        while (start <= end && fun_trim_is_in_mask(source[start + 1], mask)) {
+            ++start;
+        }
+    }
+
+    if (where == 'R' || where == 'B') {
+        while (end >= start && fun_trim_is_in_mask(source[end + 1], mask)) {
+            --end;
+        }
+    }
+
+    len = end - start + 1;
+    sret = GetTempStrMemory();
+    if (len > 0) {
+        memcpy(sret + 1, source + start + 1, len);
+        sret[0] = len;
+    } else {
+        sret[0] = 0;
+    }
     targ = T_STR;
 }
 

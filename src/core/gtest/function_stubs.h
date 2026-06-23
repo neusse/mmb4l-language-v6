@@ -93,6 +93,7 @@ void fun_tab() { }
 void fun_tan() { }
 void fun_time() { }
 void fun_timer() { }
+void fun_trim() { }
 void fun_ucase() { }
 void fun_val() { }
 void fun_version() { }

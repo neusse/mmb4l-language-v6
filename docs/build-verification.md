@@ -29,10 +29,25 @@ cd ~/src/mmb4l-language-v6
 bash ./build.sh
 ```
 
-If the repo is checked out under `/mnt/c`, the executable can build, but the
-full test suite may fail a case-sensitivity test because Windows filesystems
-normally cannot hold `foo.bas`, `foo.BAS`, and `foo.Bas` as separate files. Use
-a WSL-native clone or temporary copy for full verification.
+If the repo is checked out under `/mnt/c`, the project directory must be
+case-sensitive. The full test suite includes a path test that creates
+`foo.bas`, `foo.BAS`, and `foo.Bas` as separate files.
+
+From an elevated or WSL-enabled Windows environment:
+
+```powershell
+fsutil.exe file setCaseSensitiveInfo C:\Users\georg\Codex_Projects\mmb4l-language-v6 enable
+fsutil.exe file queryCaseSensitiveInfo C:\Users\georg\Codex_Projects\mmb4l-language-v6
+```
+
+Expected query output:
+
+```text
+Case sensitive attribute on directory C:\Users\georg\Codex_Projects\mmb4l-language-v6 is enabled.
+```
+
+If enabling case sensitivity is not possible, use a WSL-native clone or
+temporary copy for full verification.
 
 Example PowerShell verification using a temporary WSL-native copy:
 
@@ -45,7 +60,8 @@ checkout.
 
 ## Current Baseline Result
 
-Verified on Ubuntu 22.04 WSL using a WSL-native temporary copy:
+Verified on Ubuntu 22.04 WSL from a case-sensitive project directory mounted at
+`/mnt/c/Users/georg/Codex_Projects/mmb4l-language-v6`:
 
 ```text
 100% tests passed, 0 tests failed out of 999
@@ -53,6 +69,5 @@ The following tests did not run:
   581 - ParseTest.ParsePage_GivenUnknownNonStringPageId_AndPicomite (Skipped)
 ```
 
-The same build run directly from `/mnt/c` built `mmbasic`, but failed
-`ProgramTest.GetBasFile_GivenRelativePath` because the Windows-mounted path is
-case-insensitive.
+If this same build is run from a non-case-sensitive Windows directory, it can
+build `mmbasic` but fail `ProgramTest.GetBasFile_GivenRelativePath`.

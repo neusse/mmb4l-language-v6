@@ -140,6 +140,7 @@ void fun_tab(void);
 void fun_tan(void);
 void fun_timer(void);
 void fun_time(void);
+void fun_trim(void);
 void fun_ucase(void);
 void fun_val(void);
 void fun_version(void);
