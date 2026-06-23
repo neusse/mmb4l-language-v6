@@ -41,14 +41,14 @@ classify them instead of silently missing them.
 
 | Source | Command | Function | Operator | Keyword |
 | --- | ---: | ---: | ---: | ---: |
-| MMB4L | 126 | 102 | 22 | 10 |
+| MMB4L | 128 | 102 | 22 | 10 |
 | PicoMite v6 | 220 | 110 | 20 | 10 |
 
 PicoMite v6 to MMB4L gap rows:
 
 | Classification | Count | Meaning |
 | --- | ---: | --- |
-| portable | 26 | Language/runtime feature that should be possible to port without PicoMite hardware. |
+| portable | 24 | Language/runtime feature that should be possible to port without PicoMite hardware. |
 | linux-specific | 15 | Needs Linux filesystem, process, display, GUI, or host behavior mapping. |
 | hardware | 84 | Depends on PicoMite hardware, bus, display/input firmware, or embedded-only behavior. |
 | defer | 4 | Needs source review before choosing a class. |
@@ -86,7 +86,7 @@ includes likely port candidates such as:
 
 | Area | Candidates |
 | --- | --- |
-| Parser/comments | `/*`, `*/` |
+| Parser/comments | none currently classified as portable parser/comment commands |
 | Strings | none currently classified as small string functions |
 | Arrays | `Array Add`, `Array Insert`, `Array Set`, `Array Slice`, `ReDim` |
 | Structured data | `Type`, `End Type`, `Struct`, `Struct(` |
@@ -125,8 +125,9 @@ These four gaps should be source-reviewed before classification changes:
 ## Prior Completed Patches
 
 `Trim$(`, `SChange$(`, `base$(`, `TopBottom(`, `Bit(`, `Byte(`, `Flag(`,
-and `Flags = value` were ported before this generated baseline. They now
-appear in both surfaces where token capacity allows and are no longer gaps.
+`Flags = value`, `/*`, and `*/` were ported before this generated baseline.
+They now appear in both surfaces where token capacity allows and are no longer
+gaps.
 
 Verification at that point:
 

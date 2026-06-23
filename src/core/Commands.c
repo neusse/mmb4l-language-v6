@@ -139,6 +139,28 @@ void cmd_flags(void) {
     g_flag = getinteger(cmdline);
 }
 
+
+void cmd_comment(void) {
+    const CommandToken comment_token = commandtbl_get("/*");
+    const CommandToken endcomment_token = commandtbl_get("*/");
+    const char *p = nextstmt;
+
+    while (true) {
+        p = GetNextCommand(p, NULL, "No matching END declaration");
+        CommandToken token = commandtbl_decode(p);
+        if (token == comment_token) error("No matching END declaration");
+        if (token == endcomment_token) {
+            skipelement(p);
+            nextstmt = p;
+            break;
+        }
+    }
+}
+
+
+void cmd_endcomment(void) {
+}
+
 #if !defined(__mmb4l__)
 int OptionErrorSkip;                                                // how to handle an error
 int MMerrno;                                                        // the error number

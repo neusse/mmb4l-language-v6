@@ -24,6 +24,7 @@ add_test("test_erase_given_strings")
 add_test("test_inv")
 add_test("test_bit_function_and_command")
 add_test("test_flag_function_and_commands")
+add_test("test_block_comment_commands")
 add_test("test_unary_minus")
 add_test("test_unary_plus")
 add_test("test_error_correct_after_goto")
@@ -36,7 +37,7 @@ If InStr(Mm.CmdLine$, "--base") Then run_tests() Else run_tests("--base=1")
 End
 
 Sub test_array_decl_errors()
-  On Error Skip
+  On Error Skip 1
   Local a%(BASE%)
   assert_raw_error("Dimensions")
 
@@ -188,6 +189,11 @@ Sub test_flag_function_and_commands()
   assert_int_equals(1, Flag(1))
   assert_int_equals(0, Flag(2))
   assert_int_equals(1, Flag(3))
+End Sub
+
+Sub test_block_comment_commands()
+  Execute "*/"
+  assert_true(1)
 End Sub
 
 Sub test_unary_minus()

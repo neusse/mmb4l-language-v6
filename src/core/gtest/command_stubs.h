@@ -21,6 +21,7 @@ void cmd_clear() { }
 void cmd_close() { }
 void cmd_cls() { }
 void cmd_colour() { }
+void cmd_comment() { }
 void cmd_console() { }
 void cmd_const() { }
 void cmd_continue() { }
@@ -36,6 +37,7 @@ void cmd_edit() { }
 void cmd_else() { }
 void cmd_end() { }
 void cmd_endfun() { }
+void cmd_endcomment() { }
 void cmd_erase() { }
 void cmd_error() { }
 void cmd_execute() { }

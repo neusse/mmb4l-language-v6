@@ -8,7 +8,7 @@ A gap row means PicoMite exposes that surface and MMB4L does not expose the same
 
 | Classification | Count |
 | --- | ---: |
-| portable | 26 |
+| portable | 24 |
 | linux-specific | 15 |
 | hardware | 84 |
 | defer | 4 |
@@ -120,8 +120,6 @@ A gap row means PicoMite exposes that surface and MMB4L does not expose the same
 | `Time$` | command | linux-specific | `cmd_time` | function | Needs Linux filesystem, process, or host configuration semantics. |
 | `Update Firmware` | command | linux-specific | `cmd_update` | - | Needs Linux filesystem, process, or host configuration semantics. |
 | `YModem` | command | linux-specific | `cmd_xmodem` | - | Serial transfer workflow; not needed for the current PicoCalc/Luckfox scope. |
-| `*/` | command | portable | `cmd_endcomment` | - | Language/runtime feature with no required PicoMite-only hardware. |
-| `/*` | command | portable | `cmd_comment` | - | Language/runtime feature with no required PicoMite-only hardware. |
 | `Array Add` | command | portable | `cmd_add` | - | Language/runtime feature with no required PicoMite-only hardware. |
 | `Array Insert` | command | portable | `cmd_insert` | - | Language/runtime feature with no required PicoMite-only hardware. |
 | `Array Set` | command | portable | `cmd_arrayset` | - | Language/runtime feature with no required PicoMite-only hardware. |

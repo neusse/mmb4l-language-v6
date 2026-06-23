@@ -1,6 +1,4 @@
 picomite,normalized,missing_surface,classification,picomite_handlers,mmb4l_surfaces,notes
-*/,*/,command,portable,cmd_endcomment,-,Language/runtime feature with no required PicoMite-only hardware.
-/*,/*,command,portable,cmd_comment,-,Language/runtime feature with no required PicoMite-only hardware.
 ADC,ADC,command,hardware,cmd_adc,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
 Array Add,ARRAY ADD,command,portable,cmd_add,-,Language/runtime feature with no required PicoMite-only hardware.
 Array Insert,ARRAY INSERT,command,portable,cmd_insert,-,Language/runtime feature with no required PicoMite-only hardware.
