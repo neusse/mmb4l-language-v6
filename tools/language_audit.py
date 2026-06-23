@@ -57,6 +57,7 @@ PORTABLE = {
     "LINPUT",
     "LOCATION",
     "MANDELBROT",
+    "PIXEL",
     "REDIM",
     "SCHANGE$",
     "STAR",
@@ -79,7 +80,6 @@ LINUX_SPECIFIC = {
     "HELP",
     "LIBRARY",
     "MSGBOX",
-    "PIXEL",
     "SAVE",
     "TIME$",
     "UPDATE FIRMWARE",
@@ -169,15 +169,21 @@ HARDWARE = {
 
 DEFER = {
     "~",
-    "ASTRO",
     "CALC",
-    "CHAIN",
     "INTERRUPT",
-    "LOCATION",
-    "MSGBOX",
-    "PIXEL",
-    "STAR",
     "WATCHDOG",
+}
+
+NOTE_OVERRIDES = {
+    "BACKLIGHT": "Hardware command, but a target-specific Luckfox/PicoCalc backend may be useful because the device has controllable backlight support.",
+    "EDIT FILE": "PicoMite edits an external file buffer; MMB4L `Edit` already accepts a filename, so this is likely a compatibility alias/design task.",
+    "HELP": "PicoMite reads `A:/help.txt`; MMB4L should map this to local docs or command/function lists if implemented.",
+    "LIBRARY": "PicoMite library storage is flash-based; Linux needs a filesystem/module design rather than direct behavior cloning.",
+    "MSGBOX": "GUI popup helper; needs an SDL/Linux UI decision before implementation.",
+    "PIXEL": "PicoMite `Pixel(x,y)` reads a pixel colour; MMB4L has the write command and likely can add this through its graphics surface pixels.",
+    "SAVE": "MMB4L intentionally edits real files and has no flash-to-disk save step; any compatibility command needs Linux file semantics.",
+    "WAIT": "PIO assembler instruction wrapper, not a sleep command; keep with PIO/hardware surface.",
+    "YMODEM": "Serial transfer workflow; not needed for the current PicoCalc/Luckfox scope.",
 }
 
 
@@ -324,14 +330,15 @@ def dedupe_entries(entries: list[Entry]) -> list[Entry]:
 
 
 def classify_gap(name: str, surface: str) -> tuple[str, str]:
+    note_override = NOTE_OVERRIDES.get(name)
     if name in PORTABLE:
-        return "portable", "Language/runtime feature with no required PicoMite-only hardware."
+        return "portable", note_override or "Language/runtime feature with no required PicoMite-only hardware."
     if name in LINUX_SPECIFIC:
-        return "linux-specific", "Needs Linux filesystem, process, or host configuration semantics."
+        return "linux-specific", note_override or "Needs Linux filesystem, process, or host configuration semantics."
     if name in HARDWARE:
-        return "hardware", "Depends on PicoMite hardware, display, input, bus, or firmware backend."
+        return "hardware", note_override or "Depends on PicoMite hardware, display, input, bus, or firmware backend."
     if name in DEFER:
-        return "defer", "Needs source review before deciding whether it is portable or backend-specific."
+        return "defer", note_override or "Needs source review before deciding whether it is portable or backend-specific."
     if surface == "operator":
         return "portable", "Operator/parser surface."
     return "defer", "Unclassified by rule; source review required before porting."
@@ -459,7 +466,7 @@ def write_gap_markdown(path: pathlib.Path, rows: list[dict[str, str]]) -> None:
 
 def write_csv(path: pathlib.Path, rows: list[dict[str, str]], fields: list[str]) -> None:
     with path.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fields)
+        writer = csv.DictWriter(handle, fieldnames=fields, lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 

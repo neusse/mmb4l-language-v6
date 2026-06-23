@@ -48,8 +48,8 @@ PicoMite v6 to MMB4L gap rows:
 
 | Classification | Count | Meaning |
 | --- | ---: | --- |
-| portable | 35 | Language/runtime feature that should be possible to port without PicoMite hardware. |
-| linux-specific | 16 | Needs Linux filesystem, process, display, GUI, or host behavior mapping. |
+| portable | 36 | Language/runtime feature that should be possible to port without PicoMite hardware. |
+| linux-specific | 15 | Needs Linux filesystem, process, display, GUI, or host behavior mapping. |
 | hardware | 84 | Depends on PicoMite hardware, bus, display/input firmware, or embedded-only behavior. |
 | defer | 4 | Needs source review before choosing a class. |
 
@@ -61,6 +61,23 @@ PicoMite v6 to MMB4L gap rows:
 | linux-specific | Semantics depend on Linux paths, files, processes, terminal/display backend, or host UI. |
 | hardware | Semantics require PicoMite GPIO, buses, PIO, firmware update flow, sensors, or embedded hardware. |
 | defer | The name alone is not enough; inspect the PicoMite implementation before scheduling work. |
+
+## Reserved Surface Policy
+
+Do not add every PicoMite-only name as a token just to reserve it. That makes
+the language stricter without giving users useful behavior.
+
+Use this policy:
+
+| Case | Behavior |
+| --- | --- |
+| Planned for this port | Add the token and implement it. |
+| Planned but backend unavailable at runtime | Add the token and fail with a clear platform/backend error. |
+| Not planned or not yet reviewed | Leave it unimplemented so normal parser errors expose unsupported use. |
+| Hardware name with a target-specific implementation | Keep it classified as `hardware`, then document the supported target backend. |
+
+This means hardware gaps are not automatically reserved. They become reserved
+only when this project intentionally owns that command/function surface.
 
 ## Current Portable Candidates
 
@@ -75,9 +92,23 @@ includes likely port candidates such as:
 | Structured data | `Type`, `End Type`, `Struct`, `Struct(` |
 | Bit/byte helpers | `Bit(`, `Byte(`, `Flag(`, `Flags` |
 | LongString | `LInput(`, `LMid(` |
-| Graphics algorithms | `Bezier`, `Fill`, `Mandelbrot`, `Turtle` |
+| Graphics | `Bezier`, `Fill`, `Mandelbrot`, `Pixel(`, `Turtle` |
 | Program/runtime helpers | `Chain`, `VAR` |
 | Astronomy helpers | `Astro`, `Location`, `Star` |
+
+## Reviewed Edge Cases
+
+| Candidate | Current class | Finding |
+| --- | --- | --- |
+| `Backlight` | hardware | PicoMite drives display backlight hardware. Keep hardware, but it may be a Luckfox/PicoCalc target feature because the device has controllable backlight support. |
+| `Wait` | hardware | This is a PIO assembler instruction wrapper, not a sleep command. |
+| `Edit File` | linux-specific | PicoMite edits an external file buffer. MMB4L `Edit` already accepts a filename, so this is likely a compatibility alias/design task. |
+| `Help` | linux-specific | PicoMite reads `A:/help.txt`; MMB4L would need a local docs/help mapping. |
+| `MsgBox(` | linux-specific | GUI popup helper; requires an SDL/Linux UI decision. |
+| `Library` | linux-specific | PicoMite stores a library in flash; Linux needs filesystem/module semantics. |
+| `Pixel(` | portable | PicoMite reads a pixel colour; MMB4L already has pixel-writing and in-memory graphics surfaces. |
+| `Save` | linux-specific | MMB4L intentionally edits real files and has no flash-to-disk `SAVE` step. Any compatibility command needs explicit Linux semantics. |
+| `YModem` | linux-specific | Serial transfer workflow; not needed for current PicoCalc/Luckfox scope. |
 
 ## Defer Items
 

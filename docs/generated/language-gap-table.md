@@ -8,8 +8,8 @@ A gap row means PicoMite exposes that surface and MMB4L does not expose the same
 
 | Classification | Count |
 | --- | ---: |
-| portable | 35 |
-| linux-specific | 16 |
+| portable | 36 |
+| linux-specific | 15 |
 | hardware | 84 |
 | defer | 4 |
 
@@ -22,7 +22,7 @@ A gap row means PicoMite exposes that surface and MMB4L does not expose the same
 | `WatchDog` | command | defer | `cmd_watchdog` | - | Needs source review before deciding whether it is portable or backend-specific. |
 | `~(` | function | defer | `fun_tilde` | - | Needs source review before deciding whether it is portable or backend-specific. |
 | `ADC` | command | hardware | `cmd_adc` | - | Depends on PicoMite hardware, display, input, bus, or firmware backend. |
-| `Backlight` | command | hardware | `cmd_backlight` | - | Depends on PicoMite hardware, display, input, bus, or firmware backend. |
+| `Backlight` | command | hardware | `cmd_backlight` | - | Hardware command, but a target-specific Luckfox/PicoCalc backend may be useful because the device has controllable backlight support. |
 | `Bitstream` | command | hardware | `cmd_bitstream` | - | Depends on PicoMite hardware, display, input, bus, or firmware backend. |
 | `Camera` | command | hardware | `cmd_camera` | - | Depends on PicoMite hardware, display, input, bus, or firmware backend. |
 | `Click(` | function | hardware | `fun_click` | - | Depends on PicoMite hardware, display, input, bus, or firmware backend. |
@@ -92,7 +92,7 @@ A gap row means PicoMite exposes that surface and MMB4L does not expose the same
 | `Tilemap` | function | hardware | `fun_tilemap` | - | Depends on PicoMite hardware, display, input, bus, or firmware backend. |
 | `TMC22xx` | command | hardware | `cmd_TMC22xx` | - | Depends on PicoMite hardware, display, input, bus, or firmware backend. |
 | `Touch(` | function | hardware | `fun_touch` | - | Depends on PicoMite hardware, display, input, bus, or firmware backend. |
-| `Wait` | command | hardware | `cmd_wait` | - | Depends on PicoMite hardware, display, input, bus, or firmware backend. |
+| `Wait` | command | hardware | `cmd_wait` | - | PIO assembler instruction wrapper, not a sleep command; keep with PIO/hardware surface. |
 | `WEB` | command | hardware | `cmd_web` | - | Depends on PicoMite hardware, display, input, bus, or firmware backend. |
 | `Wii` | command | hardware | `cmd_Classic` | - | Depends on PicoMite hardware, display, input, bus, or firmware backend. |
 | `Wii Classic` | command | hardware | `cmd_Classic` | - | Depends on PicoMite hardware, display, input, bus, or firmware backend. |
@@ -110,17 +110,16 @@ A gap row means PicoMite exposes that surface and MMB4L does not expose the same
 | `Configure` | command | linux-specific | `cmd_configure` | - | Needs Linux filesystem, process, or host configuration semantics. |
 | `Date$` | command | linux-specific | `cmd_date` | function | Needs Linux filesystem, process, or host configuration semantics. |
 | `Drive` | command | linux-specific | `cmd_drive` | - | Needs Linux filesystem, process, or host configuration semantics. |
-| `Edit File` | command | linux-specific | `cmd_editfile` | - | Needs Linux filesystem, process, or host configuration semantics. |
+| `Edit File` | command | linux-specific | `cmd_editfile` | - | PicoMite edits an external file buffer; MMB4L `Edit` already accepts a filename, so this is likely a compatibility alias/design task. |
 | `Flush` | command | linux-specific | `cmd_flush` | - | Needs Linux filesystem, process, or host configuration semantics. |
-| `Help` | command | linux-specific | `cmd_help` | - | Needs Linux filesystem, process, or host configuration semantics. |
-| `Help` | function | linux-specific | `cmd_help` | - | Needs Linux filesystem, process, or host configuration semantics. |
-| `Library` | command | linux-specific | `cmd_library` | - | Needs Linux filesystem, process, or host configuration semantics. |
-| `MsgBox(` | function | linux-specific | `fun_msgbox` | - | Needs Linux filesystem, process, or host configuration semantics. |
-| `Pixel` | function | linux-specific | `fun_pixel` | command | Needs Linux filesystem, process, or host configuration semantics. |
-| `Save` | command | linux-specific | `cmd_save` | - | Needs Linux filesystem, process, or host configuration semantics. |
+| `Help` | command | linux-specific | `cmd_help` | - | PicoMite reads `A:/help.txt`; MMB4L should map this to local docs or command/function lists if implemented. |
+| `Help` | function | linux-specific | `cmd_help` | - | PicoMite reads `A:/help.txt`; MMB4L should map this to local docs or command/function lists if implemented. |
+| `Library` | command | linux-specific | `cmd_library` | - | PicoMite library storage is flash-based; Linux needs a filesystem/module design rather than direct behavior cloning. |
+| `MsgBox(` | function | linux-specific | `fun_msgbox` | - | GUI popup helper; needs an SDL/Linux UI decision before implementation. |
+| `Save` | command | linux-specific | `cmd_save` | - | MMB4L intentionally edits real files and has no flash-to-disk save step; any compatibility command needs Linux file semantics. |
 | `Time$` | command | linux-specific | `cmd_time` | function | Needs Linux filesystem, process, or host configuration semantics. |
 | `Update Firmware` | command | linux-specific | `cmd_update` | - | Needs Linux filesystem, process, or host configuration semantics. |
-| `YModem` | command | linux-specific | `cmd_xmodem` | - | Needs Linux filesystem, process, or host configuration semantics. |
+| `YModem` | command | linux-specific | `cmd_xmodem` | - | Serial transfer workflow; not needed for the current PicoCalc/Luckfox scope. |
 | `*/` | command | portable | `cmd_endcomment` | - | Language/runtime feature with no required PicoMite-only hardware. |
 | `/*` | command | portable | `cmd_comment` | - | Language/runtime feature with no required PicoMite-only hardware. |
 | `Array Add` | command | portable | `cmd_add` | - | Language/runtime feature with no required PicoMite-only hardware. |
@@ -147,6 +146,7 @@ A gap row means PicoMite exposes that surface and MMB4L does not expose the same
 | `LMid(` | function | portable | `cmd_lmid` | - | Language/runtime feature with no required PicoMite-only hardware. |
 | `Location` | command | portable | `cmd_locate` | - | Language/runtime feature with no required PicoMite-only hardware. |
 | `Mandelbrot` | command | portable | `cmd_mandelbrot` | - | Language/runtime feature with no required PicoMite-only hardware. |
+| `Pixel` | function | portable | `fun_pixel` | command | PicoMite `Pixel(x,y)` reads a pixel colour; MMB4L has the write command and likely can add this through its graphics surface pixels. |
 | `ReDim` | command | portable | `cmd_redim` | - | Language/runtime feature with no required PicoMite-only hardware. |
 | `SChange$(` | function | portable | `fun_schange` | - | Language/runtime feature with no required PicoMite-only hardware. |
 | `Star` | command | portable | `cmd_star` | - | Language/runtime feature with no required PicoMite-only hardware. |
