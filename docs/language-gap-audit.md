@@ -41,17 +41,17 @@ classify them instead of silently missing them.
 
 | Source | Command | Function | Operator | Keyword |
 | --- | ---: | ---: | ---: | ---: |
-| MMB4L | 130 | 103 | 22 | 10 |
+| MMB4L | 131 | 103 | 22 | 10 |
 | PicoMite v6 | 220 | 110 | 20 | 10 |
 
 PicoMite v6 to MMB4L gap rows:
 
 | Classification | Count | Meaning |
 | --- | ---: | --- |
-| portable | 21 | Language/runtime feature that should be possible to port without PicoMite hardware. |
-| linux-specific | 15 | Needs Linux filesystem, process, display, GUI, or host behavior mapping. |
+| portable | 0 | Language/runtime feature that should be possible to port without PicoMite hardware. |
+| linux-specific | 16 | Needs Linux filesystem, process, display, GUI, or host behavior mapping. |
 | hardware | 84 | Depends on PicoMite hardware, bus, display/input firmware, or embedded-only behavior. |
-| defer | 4 | Needs source review before choosing a class. |
+| defer | 23 | Needs source review before choosing a class. |
 
 ## Classification Rules
 
@@ -81,20 +81,50 @@ only when this project intentionally owns that command/function surface.
 
 ## Current Portable Candidates
 
-The generated table is the source of truth, but the current portable bucket
-includes likely port candidates such as:
+The generated table is the source of truth. The current portable bucket is
+empty; all rows that were previously listed as portable have either been
+implemented or moved to a more accurate class with a concrete blocker.
 
-| Area | Candidates |
+| Area | Status |
 | --- | --- |
-| Parser/comments | none currently classified as portable parser/comment commands |
-| Strings | none currently classified as small string functions |
-| Arrays | `Array Add`, `Array Insert`, `Array Set`, `Array Slice`, `ReDim` |
-| Structured data | `Type`, `End Type`, `Struct`, `Struct(` |
-| Bit/byte helpers | `Flags` as a bare readback function remains; `Bit(`, `Byte(`, `Flag(`, and `Flags = value` are implemented. |
-| LongString | `LInput(` |
-| Graphics | `Bezier`, `Fill`, `Mandelbrot`, `Pixel(`, `Turtle` |
-| Program/runtime helpers | `VAR` |
-| Astronomy helpers | `Astro`, `Location`, `Star` |
+| Parser/comments | Complete for currently reviewed portable surfaces. |
+| Strings | Complete for currently reviewed portable surfaces. |
+| Arrays | Deferred; needs a reviewed array helper subsystem and resizing design. |
+| Structured data | Deferred; needs parser, variable-table, and token-table architecture work. |
+| Bit/byte helpers | `Flags = value`, `Bit(`, `Byte(`, and `Flag(` are implemented; bare `Flags` readback is token-table blocked. |
+| LongString | `LMid(` is implemented; `LInput(` is token-table blocked. |
+| Graphics | `Blit Memory` is implemented; algorithmic graphics commands are deferred for graphics-backend tests. |
+| Program/runtime helpers | `Chain` is implemented; `VAR` is Linux-specific persistence design work. |
+| Astronomy helpers | Deferred; needs GPS/astronomy source review and domain tests. |
+
+## Resolution of Prior Portable Rows
+
+These rows were the 21 remaining portable gaps before this pass. They are now
+resolved as follows:
+
+| Prior row | Resolution | Action |
+| --- | --- | --- |
+| `Array Add` | defer | Reclassified; requires a reviewed array helper subsystem for numeric/string arrays, cardinality, and stride semantics. |
+| `Array Insert` | defer | Reclassified; requires multidimensional array slice/index semantics before implementation. |
+| `Array Set` | defer | Reclassified; requires array helper coverage for numeric/string arrays and type coercion. |
+| `Array Slice` | defer | Reclassified; requires multidimensional array slice/index semantics before implementation. |
+| `Astro` | defer | Reclassified; implemented in PicoMite GPS/astronomy code and needs dedicated domain review/tests. |
+| `Bezier` | defer | Reclassified; graphics algorithm needs a backend-aware port and visual/regression tests. |
+| `Blit Memory` | implemented | Added top-level PicoMite command surface that reuses MMB4L's existing `Blit MEMORY` implementation. |
+| `End Type` | defer | Reclassified; part of structured-type parser/runtime support, not a standalone command patch. |
+| `Fill` | defer | Reclassified; graphics algorithm needs a backend-aware port and visual/regression tests. |
+| `Flags` function | defer | Reclassified; `Flags = value` exists, but bare readback is blocked by the full one-byte function token table. |
+| `LInput(` | defer | Reclassified; handler is portable in principle, but adding another function token is blocked by the full one-byte function token table. |
+| `Location` | defer | Reclassified; implemented in PicoMite GPS/astronomy code and needs dedicated domain review/tests. |
+| `Mandelbrot` | defer | Reclassified; graphics algorithm needs a backend-aware port and visual/regression tests. |
+| `Pixel(` | defer | Reclassified; readback is plausible, but adding another function token is blocked by the full one-byte function token table. |
+| `ReDim` | defer | Reclassified; requires reviewed runtime support for resizing existing arrays safely. |
+| `Star` | defer | Reclassified; implemented in PicoMite GPS/astronomy code and needs dedicated domain review/tests. |
+| `Struct` command | defer | Reclassified; structured-type support needs parser and variable-table architecture work. |
+| `Struct(` function | defer | Reclassified; structured-type support also needs function-token architecture work. |
+| `Turtle` | defer | Reclassified; graphics-state command set needs backend-aware port and visual/regression tests. |
+| `Type` | defer | Reclassified; part of structured-type parser/runtime support, not a standalone command patch. |
+| `VAR` | linux-specific | Reclassified; PicoMite persists variables in flash, while MMB4L needs explicit Linux filesystem persistence semantics. |
 
 ## Reviewed Edge Cases
 
@@ -106,10 +136,10 @@ includes likely port candidates such as:
 | `Help` | linux-specific | PicoMite reads `A:/help.txt`; MMB4L would need a local docs/help mapping. |
 | `MsgBox(` | linux-specific | GUI popup helper; requires an SDL/Linux UI decision. |
 | `Library` | linux-specific | PicoMite stores a library in flash; Linux needs filesystem/module semantics. |
-| `Pixel(` | portable | PicoMite reads a pixel colour; MMB4L already has pixel-writing and in-memory graphics surfaces. |
+| `Pixel(` | defer | PicoMite reads a pixel colour and MMB4L has pixel surfaces, but adding another function token is blocked by the full one-byte function token table. |
 | `Save` | linux-specific | MMB4L intentionally edits real files and has no flash-to-disk `SAVE` step. Any compatibility command needs explicit Linux semantics. |
 | `YModem` | linux-specific | Serial transfer workflow; not needed for current PicoCalc/Luckfox scope. |
-| `Flags` function | portable | `Flags = value` is implemented as a command and `Flag(n)` can read individual bits. Bare `Flags` readback still needs parser/token-table work because the existing one-byte token table is full at `Flag(` token 255. |
+| `Flags` function | defer | `Flags = value` is implemented as a command and `Flag(n)` can read individual bits. Bare `Flags` readback still needs parser/token-table work because the existing one-byte token table is full at `Flag(` token 255. |
 
 ## Defer Items
 
@@ -126,7 +156,7 @@ These four gaps should be source-reviewed before classification changes:
 
 `Trim$(`, `SChange$(`, `base$(`, `TopBottom(`, `Bit(`, `Byte(`, `Flag(`,
 `Flags = value`, `/*`, `*/`, `LMid(`, and `Chain` were ported before this
-generated baseline.
+generated baseline. `Blit Memory` was ported in the current pass.
 They now appear in both surfaces where token capacity allows and are no longer
 gaps.
 

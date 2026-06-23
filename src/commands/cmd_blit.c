@@ -323,3 +323,7 @@ void cmd_blit(void) {
     }
     ON_FAILURE_ERROR(result);
 }
+
+void cmd_blitmemory(void) {
+    ON_FAILURE_ERROR(cmd_blit_memory(cmdline));
+}

@@ -1,14 +1,13 @@
 picomite,normalized,missing_surface,classification,picomite_handlers,mmb4l_surfaces,notes
 ADC,ADC,command,hardware,cmd_adc,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
-Array Add,ARRAY ADD,command,portable,cmd_add,-,Language/runtime feature with no required PicoMite-only hardware.
-Array Insert,ARRAY INSERT,command,portable,cmd_insert,-,Language/runtime feature with no required PicoMite-only hardware.
-Array Set,ARRAY SET,command,portable,cmd_arrayset,-,Language/runtime feature with no required PicoMite-only hardware.
-Array Slice,ARRAY SLICE,command,portable,cmd_slice,-,Language/runtime feature with no required PicoMite-only hardware.
-Astro,ASTRO,command,portable,cmd_star,-,Language/runtime feature with no required PicoMite-only hardware.
+Array Add,ARRAY ADD,command,defer,cmd_add,-,"Portable in principle, but requires a reviewed array helper subsystem covering numeric/string arrays, cardinality, and stride semantics."
+Array Insert,ARRAY INSERT,command,defer,cmd_insert,-,"Portable in principle, but requires a reviewed array helper subsystem covering multidimensional slice/index semantics."
+Array Set,ARRAY SET,command,defer,cmd_arrayset,-,"Portable in principle, but requires a reviewed array helper subsystem covering numeric/string arrays and type coercion."
+Array Slice,ARRAY SLICE,command,defer,cmd_slice,-,"Portable in principle, but requires a reviewed array helper subsystem covering multidimensional slice/index semantics."
+Astro,ASTRO,command,defer,cmd_star,-,"Portable in principle, but implemented in PicoMite's GPS/astronomy code and needs a dedicated source review plus domain tests."
 Backlight,BACKLIGHT,command,hardware,cmd_backlight,-,"Hardware command, but a target-specific Luckfox/PicoCalc backend may be useful because the device has controllable backlight support."
-Bezier,BEZIER,command,portable,cmd_bezier,-,Language/runtime feature with no required PicoMite-only hardware.
+Bezier,BEZIER,command,defer,cmd_bezier,-,"Portable graphics algorithm in principle, but needs a dedicated graphics-backend port and visual/regression tests."
 Bitstream,BITSTREAM,command,hardware,cmd_bitstream,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
-Blit Memory,BLIT MEMORY,command,portable,cmd_blitmemory,-,Language/runtime feature with no required PicoMite-only hardware.
 Calc,CALC,command,defer,cmd_calc,-,Needs source review before deciding whether it is portable or backend-specific.
 Camera,CAMERA,command,hardware,cmd_camera,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
 Click(,CLICK,function,hardware,fun_click,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
@@ -25,9 +24,9 @@ Draw3D,DRAW3D,command,hardware,cmd_3D,-,"Depends on PicoMite hardware, display, 
 Draw3D,DRAW3D,function,hardware,fun_3D,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
 Drive,DRIVE,command,linux-specific,cmd_drive,-,"Needs Linux filesystem, process, or host configuration semantics."
 Edit File,EDIT FILE,command,linux-specific,cmd_editfile,-,"PicoMite edits an external file buffer; MMB4L `Edit` already accepts a filename, so this is likely a compatibility alias/design task."
-End Type,END TYPE,command,portable,cmd_endtype,-,Language/runtime feature with no required PicoMite-only hardware.
-Fill,FILL,command,portable,cmd_fill,-,Language/runtime feature with no required PicoMite-only hardware.
-Flags,FLAGS,function,portable,cmd_flags,command,Language/runtime feature with no required PicoMite-only hardware.
+End Type,END TYPE,command,defer,cmd_endtype,-,Part of PicoMite v6 structured-type support; requires a parser/runtime design rather than a standalone command token.
+Fill,FILL,command,defer,cmd_fill,-,"Portable graphics algorithm in principle, but needs a dedicated graphics-backend port and visual/regression tests."
+Flags,FLAGS,function,defer,cmd_flags,command,"`Flags = value` is implemented, but bare `Flags` function readback is blocked by the one-byte function token table being full."
 Flush,FLUSH,command,linux-specific,cmd_flush,-,"Needs Linux filesystem, process, or host configuration semantics."
 FM,FM,command,hardware,cmd_fm,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
 Frame,FRAME,command,hardware,cmd_frame,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
@@ -55,9 +54,9 @@ Keyboard,KEYBOARD,command,hardware,cmd_keyboard,-,"Depends on PicoMite hardware,
 Keypad,KEYPAD,command,hardware,cmd_keypad,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
 LCD,LCD,command,hardware,cmd_lcd,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
 Library,LIBRARY,command,linux-specific,cmd_library,-,PicoMite library storage is flash-based; Linux needs a filesystem/module design rather than direct behavior cloning.
-LInput(,LINPUT,function,portable,fun_linputstr,-,Language/runtime feature with no required PicoMite-only hardware.
-Location,LOCATION,command,portable,cmd_locate,-,Language/runtime feature with no required PicoMite-only hardware.
-Mandelbrot,MANDELBROT,command,portable,cmd_mandelbrot,-,Language/runtime feature with no required PicoMite-only hardware.
+LInput(,LINPUT,function,defer,fun_linputstr,-,"Handler is portable in principle, but adding `LInput(` as a function is blocked by the one-byte function token table being full."
+Location,LOCATION,command,defer,cmd_locate,-,"Portable in principle, but implemented in PicoMite's GPS/astronomy code and needs a dedicated source review plus domain tests."
+Mandelbrot,MANDELBROT,command,defer,cmd_mandelbrot,-,"Portable graphics algorithm in principle, but needs a dedicated graphics-backend port and visual/regression tests."
 Map,MAP,command,hardware,cmd_map,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
 Map,MAP,function,hardware,"cmd_map, fun_map",-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
 Mouse,MOUSE,command,hardware,cmd_mouse,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
@@ -69,7 +68,7 @@ OneWire,ONEWIRE,command,hardware,cmd_onewire,-,"Depends on PicoMite hardware, di
 Out,OUT,command,hardware,cmd_out,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
 PIO,PIO,command,hardware,cmd_pio,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
 PIO,PIO,function,hardware,fun_pio,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
-Pixel,PIXEL,function,portable,fun_pixel,command,"PicoMite `Pixel(x,y)` reads a pixel colour; MMB4L has the write command and likely can add this through its graphics surface pixels."
+Pixel,PIXEL,function,defer,fun_pixel,command,"PicoMite `Pixel(x,y)` reads a pixel colour, but adding it as a function is blocked by the one-byte function token table being full."
 Port(,PORT,command,hardware,cmd_port,function,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
 Pull,PULL,command,hardware,cmd_pull,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
 Pulsin(,PULSIN,function,hardware,fun_pulsin,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
@@ -78,7 +77,7 @@ PWM,PWM,command,hardware,cmd_pwm,-,"Depends on PicoMite hardware, display, input
 Ram,RAM,command,hardware,cmd_psram,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
 Ray,RAY,command,hardware,cmd_ray,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
 Ray,RAY,function,hardware,fun_ray,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
-ReDim,REDIM,command,portable,cmd_redim,-,Language/runtime feature with no required PicoMite-only hardware.
+ReDim,REDIM,command,defer,cmd_redim,-,"Portable in principle, but requires reviewed runtime support for resizing existing arrays without corrupting variable-table storage."
 Refresh,REFRESH,command,hardware,cmd_refresh,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
 RESOLUTION,RESOLUTION,command,hardware,cmd_resolution,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
 RTC,RTC,command,hardware,cmd_rtc,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
@@ -90,10 +89,10 @@ SPI,SPI,command,hardware,cmd_spi,-,"Depends on PicoMite hardware, display, input
 SPI,SPI,function,hardware,fun_spi,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
 SPI2,SPI2,command,hardware,cmd_spi2,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
 SPI2,SPI2,function,hardware,fun_spi2,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
-Star,STAR,command,portable,cmd_star,-,Language/runtime feature with no required PicoMite-only hardware.
+Star,STAR,command,defer,cmd_star,-,"Portable in principle, but implemented in PicoMite's GPS/astronomy code and needs a dedicated source review plus domain tests."
 Stepper,STEPPER,command,hardware,cmd_stepper,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
-Struct,STRUCT,command,portable,cmd_struct,-,Language/runtime feature with no required PicoMite-only hardware.
-Struct,STRUCT,function,portable,fun_struct,-,Language/runtime feature with no required PicoMite-only hardware.
+Struct,STRUCT,command,defer,cmd_struct,-,"PicoMite structured-type support needs parser, variable-table, and token-table architecture work before this surface can be implemented."
+Struct,STRUCT,function,defer,fun_struct,-,"PicoMite structured-type support needs parser, variable-table, and token-table architecture work before this surface can be implemented."
 SYNC,SYNC,command,hardware,cmd_sync,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
 TEMPR(,TEMPR,function,hardware,fun_ds18b20,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
 TEMPR START,TEMPR START,command,hardware,cmd_ds18b20,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
@@ -103,10 +102,10 @@ Tilemap,TILEMAP,function,hardware,fun_tilemap,-,"Depends on PicoMite hardware, d
 Time$,TIME$,command,linux-specific,cmd_time,function,"Needs Linux filesystem, process, or host configuration semantics."
 TMC22xx,TMC22XX,command,hardware,cmd_TMC22xx,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
 Touch(,TOUCH,function,hardware,fun_touch,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
-Turtle,TURTLE,command,portable,cmd_turtle,-,Language/runtime feature with no required PicoMite-only hardware.
-Type,TYPE,command,portable,cmd_type,-,Language/runtime feature with no required PicoMite-only hardware.
+Turtle,TURTLE,command,defer,cmd_turtle,-,"Portable graphics algorithm in principle, but needs a dedicated graphics-state/backend port and visual/regression tests."
+Type,TYPE,command,defer,cmd_type,-,Part of PicoMite v6 structured-type support; requires a parser/runtime design rather than a standalone command token.
 Update Firmware,UPDATE FIRMWARE,command,linux-specific,cmd_update,-,"Needs Linux filesystem, process, or host configuration semantics."
-VAR,VAR,command,portable,cmd_var,-,Language/runtime feature with no required PicoMite-only hardware.
+VAR,VAR,command,linux-specific,cmd_var,-,PicoMite `VAR` persists variables in flash; MMB4L needs explicit Linux filesystem persistence semantics before implementation.
 Wait,WAIT,command,hardware,cmd_wait,-,"PIO assembler instruction wrapper, not a sleep command; keep with PIO/hardware surface."
 WatchDog,WATCHDOG,command,defer,cmd_watchdog,-,Needs source review before deciding whether it is portable or backend-specific.
 WEB,WEB,command,hardware,cmd_web,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."

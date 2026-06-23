@@ -899,6 +899,21 @@ TEST_F(MmBasicCoreTest, Tokenise_ChainStatement) {
     EXPECT_STREQ(expected, tknbuf);
 }
 
+TEST_F(MmBasicCoreTest, Tokenise_BlitMemoryStatement) {
+    sprintf(inpbuf, "Blit Memory p%%, 1, 2");
+
+    tokenise(0);
+
+    char expected[TKNBUF_SIZE];
+    sprintf(
+            expected,
+            "%c%c%cp%%, 1, 2",
+            T_NEWLINE,
+            (GetCommandValue("Blit Memory") & 0x7F) + C_BASETOKEN,
+            (GetCommandValue("Blit Memory") >> 7) + C_BASETOKEN);
+    EXPECT_STREQ(expected, tknbuf);
+}
+
 TEST_F(MmBasicCoreTest, PrepareProgram_And_FindSubFun) {
     TokeniseAndAppend("Sub foo()");
     TokeniseAndAppend("End Sub");

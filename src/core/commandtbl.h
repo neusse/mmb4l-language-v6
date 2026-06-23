@@ -74,6 +74,7 @@ struct s_tokentbl {      // structure of the command and token tables.
 void cmd_arc(void);
 void cmd_autosave(void);
 void cmd_blit();
+void cmd_blitmemory(void);
 void cmd_bit(void);
 void cmd_box(void);
 void cmd_byte(void);

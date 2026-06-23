@@ -8,17 +8,36 @@ A gap row means PicoMite exposes that surface and MMB4L does not expose the same
 
 | Classification | Count |
 | --- | ---: |
-| portable | 21 |
-| linux-specific | 15 |
+| portable | 0 |
+| linux-specific | 16 |
 | hardware | 84 |
-| defer | 4 |
+| defer | 23 |
 
 ## Gaps
 
 | PicoMite entry | Missing surface | Classification | PicoMite handler(s) | MMB4L same-name surfaces | Notes |
 | --- | --- | --- | --- | --- | --- |
+| `Array Add` | command | defer | `cmd_add` | - | Portable in principle, but requires a reviewed array helper subsystem covering numeric/string arrays, cardinality, and stride semantics. |
+| `Array Insert` | command | defer | `cmd_insert` | - | Portable in principle, but requires a reviewed array helper subsystem covering multidimensional slice/index semantics. |
+| `Array Set` | command | defer | `cmd_arrayset` | - | Portable in principle, but requires a reviewed array helper subsystem covering numeric/string arrays and type coercion. |
+| `Array Slice` | command | defer | `cmd_slice` | - | Portable in principle, but requires a reviewed array helper subsystem covering multidimensional slice/index semantics. |
+| `Astro` | command | defer | `cmd_star` | - | Portable in principle, but implemented in PicoMite's GPS/astronomy code and needs a dedicated source review plus domain tests. |
+| `Bezier` | command | defer | `cmd_bezier` | - | Portable graphics algorithm in principle, but needs a dedicated graphics-backend port and visual/regression tests. |
 | `Calc` | command | defer | `cmd_calc` | - | Needs source review before deciding whether it is portable or backend-specific. |
+| `End Type` | command | defer | `cmd_endtype` | - | Part of PicoMite v6 structured-type support; requires a parser/runtime design rather than a standalone command token. |
+| `Fill` | command | defer | `cmd_fill` | - | Portable graphics algorithm in principle, but needs a dedicated graphics-backend port and visual/regression tests. |
+| `Flags` | function | defer | `cmd_flags` | command | `Flags = value` is implemented, but bare `Flags` function readback is blocked by the one-byte function token table being full. |
 | `Interrupt` | command | defer | `cmd_csubinterrupt` | - | Needs source review before deciding whether it is portable or backend-specific. |
+| `LInput(` | function | defer | `fun_linputstr` | - | Handler is portable in principle, but adding `LInput(` as a function is blocked by the one-byte function token table being full. |
+| `Location` | command | defer | `cmd_locate` | - | Portable in principle, but implemented in PicoMite's GPS/astronomy code and needs a dedicated source review plus domain tests. |
+| `Mandelbrot` | command | defer | `cmd_mandelbrot` | - | Portable graphics algorithm in principle, but needs a dedicated graphics-backend port and visual/regression tests. |
+| `Pixel` | function | defer | `fun_pixel` | command | PicoMite `Pixel(x,y)` reads a pixel colour, but adding it as a function is blocked by the one-byte function token table being full. |
+| `ReDim` | command | defer | `cmd_redim` | - | Portable in principle, but requires reviewed runtime support for resizing existing arrays without corrupting variable-table storage. |
+| `Star` | command | defer | `cmd_star` | - | Portable in principle, but implemented in PicoMite's GPS/astronomy code and needs a dedicated source review plus domain tests. |
+| `Struct` | command | defer | `cmd_struct` | - | PicoMite structured-type support needs parser, variable-table, and token-table architecture work before this surface can be implemented. |
+| `Struct` | function | defer | `fun_struct` | - | PicoMite structured-type support needs parser, variable-table, and token-table architecture work before this surface can be implemented. |
+| `Turtle` | command | defer | `cmd_turtle` | - | Portable graphics algorithm in principle, but needs a dedicated graphics-state/backend port and visual/regression tests. |
+| `Type` | command | defer | `cmd_type` | - | Part of PicoMite v6 structured-type support; requires a parser/runtime design rather than a standalone command token. |
 | `WatchDog` | command | defer | `cmd_watchdog` | - | Needs source review before deciding whether it is portable or backend-specific. |
 | `~(` | function | defer | `fun_tilde` | - | Needs source review before deciding whether it is portable or backend-specific. |
 | `ADC` | command | hardware | `cmd_adc` | - | Depends on PicoMite hardware, display, input, bus, or firmware backend. |
@@ -119,25 +138,5 @@ A gap row means PicoMite exposes that surface and MMB4L does not expose the same
 | `Save` | command | linux-specific | `cmd_save` | - | MMB4L intentionally edits real files and has no flash-to-disk save step; any compatibility command needs Linux file semantics. |
 | `Time$` | command | linux-specific | `cmd_time` | function | Needs Linux filesystem, process, or host configuration semantics. |
 | `Update Firmware` | command | linux-specific | `cmd_update` | - | Needs Linux filesystem, process, or host configuration semantics. |
+| `VAR` | command | linux-specific | `cmd_var` | - | PicoMite `VAR` persists variables in flash; MMB4L needs explicit Linux filesystem persistence semantics before implementation. |
 | `YModem` | command | linux-specific | `cmd_xmodem` | - | Serial transfer workflow; not needed for the current PicoCalc/Luckfox scope. |
-| `Array Add` | command | portable | `cmd_add` | - | Language/runtime feature with no required PicoMite-only hardware. |
-| `Array Insert` | command | portable | `cmd_insert` | - | Language/runtime feature with no required PicoMite-only hardware. |
-| `Array Set` | command | portable | `cmd_arrayset` | - | Language/runtime feature with no required PicoMite-only hardware. |
-| `Array Slice` | command | portable | `cmd_slice` | - | Language/runtime feature with no required PicoMite-only hardware. |
-| `Astro` | command | portable | `cmd_star` | - | Language/runtime feature with no required PicoMite-only hardware. |
-| `Bezier` | command | portable | `cmd_bezier` | - | Language/runtime feature with no required PicoMite-only hardware. |
-| `Blit Memory` | command | portable | `cmd_blitmemory` | - | Language/runtime feature with no required PicoMite-only hardware. |
-| `End Type` | command | portable | `cmd_endtype` | - | Language/runtime feature with no required PicoMite-only hardware. |
-| `Fill` | command | portable | `cmd_fill` | - | Language/runtime feature with no required PicoMite-only hardware. |
-| `Flags` | function | portable | `cmd_flags` | command | Language/runtime feature with no required PicoMite-only hardware. |
-| `LInput(` | function | portable | `fun_linputstr` | - | Language/runtime feature with no required PicoMite-only hardware. |
-| `Location` | command | portable | `cmd_locate` | - | Language/runtime feature with no required PicoMite-only hardware. |
-| `Mandelbrot` | command | portable | `cmd_mandelbrot` | - | Language/runtime feature with no required PicoMite-only hardware. |
-| `Pixel` | function | portable | `fun_pixel` | command | PicoMite `Pixel(x,y)` reads a pixel colour; MMB4L has the write command and likely can add this through its graphics surface pixels. |
-| `ReDim` | command | portable | `cmd_redim` | - | Language/runtime feature with no required PicoMite-only hardware. |
-| `Star` | command | portable | `cmd_star` | - | Language/runtime feature with no required PicoMite-only hardware. |
-| `Struct` | command | portable | `cmd_struct` | - | Language/runtime feature with no required PicoMite-only hardware. |
-| `Struct` | function | portable | `fun_struct` | - | Language/runtime feature with no required PicoMite-only hardware. |
-| `Turtle` | command | portable | `cmd_turtle` | - | Language/runtime feature with no required PicoMite-only hardware. |
-| `Type` | command | portable | `cmd_type` | - | Language/runtime feature with no required PicoMite-only hardware. |
-| `VAR` | command | portable | `cmd_var` | - | Language/runtime feature with no required PicoMite-only hardware. |

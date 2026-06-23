@@ -9,6 +9,7 @@
 void cmd_arc() { }
 void cmd_autosave() { }
 void cmd_blit() { }
+void cmd_blitmemory() { }
 void cmd_bit() { }
 void cmd_box() { }
 void cmd_byte() { }
