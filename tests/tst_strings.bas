@@ -28,6 +28,7 @@ add_test("test_mid_command")
 add_test("test_oct_function")
 add_test("test_str_function")
 add_test("test_trim_function")
+add_test("test_schange_function")
 add_test("test_bin2str_function")
 add_test("test_str2bin_function")
 add_test("test special chars with OPTION ESCAPE","test_option_escape")
@@ -203,6 +204,13 @@ Sub test_trim_function()
   assert_string_equals("foo", Trim$("xyfooyx", "xy", "B"))
   assert_string_equals("", Trim$("     "))
   assert_string_equals("bar", Trim$("bar"))
+End Sub
+
+Sub test_schange_function()
+  assert_string_equals("HELLO 123", SChange$("U", "Hello 123"))
+  assert_string_equals("hello 123", SChange$("L", "Hello 123"))
+  assert_string_equals("Pico", SChange$("E", "PicoMite", 4))
+  assert_string_equals("Mite", SChange$("R", "PicoMite", 4))
 End Sub
 
 Sub test_bin2str_function()

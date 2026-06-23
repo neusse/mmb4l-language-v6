@@ -128,6 +128,7 @@ void fun_rad(void);
 void fun_rgb(void);
 void fun_right(void);
 void fun_rnd(void);
+void fun_schange(void);
 void fun_sgn(void);
 void fun_sin(void);
 void fun_space(void);

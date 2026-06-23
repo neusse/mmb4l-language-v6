@@ -666,6 +666,44 @@ void fun_trim(void) {
 }
 
 
+// Changes a string according to mode: U=uppercase, L=lowercase, E=left, R=right.
+// s$ = SCHANGE$(mode$, string$ [, count])
+void fun_schange(void) {
+    char *mode_arg, *source, mode;
+
+    getargs(&ep, 5, ",");
+    if (!(argc == 3 || argc == 5)) ERROR_SYNTAX;
+
+    mode_arg = getstring(argv[0]);
+    if ((unsigned char)mode_arg[0] < 1) ERROR_SYNTAX;
+    mode = toupper((unsigned char)mode_arg[1]);
+    source = getstring(argv[2]);
+    sret = GetTempStrMemory();
+
+    if (mode == 'U' || mode == 'L') {
+        if (argc != 3) ERROR_SYNTAX;
+        int len = (unsigned char)source[0];
+        sret[0] = len;
+        for (int i = 1; i <= len; ++i) {
+            unsigned char ch = source[i];
+            sret[i] = (mode == 'U') ? toupper(ch) : tolower(ch);
+        }
+    } else if (mode == 'E' || mode == 'R') {
+        if (argc != 5) ERROR_SYNTAX;
+        int source_len = (unsigned char)source[0];
+        int count = getint(argv[4], 0, MAXSTRLEN);
+        int len = count > source_len ? source_len : count;
+        int offset = (mode == 'R') ? source_len - len : 0;
+        sret[0] = len;
+        if (len > 0) memcpy(sret + 1, source + 1 + offset, len);
+    } else {
+        ERROR_SYNTAX;
+    }
+
+    targ = T_STR;
+}
+
+
 
 // Returns string$ converted to uppercase characters.
 // s$ = UCASE$( string$ )

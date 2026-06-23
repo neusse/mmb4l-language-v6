@@ -195,51 +195,52 @@ MMB4L,token,Rgb(,RGB,function,T_FUN | T_INT,0,fun_rgb,134
 MMB4L,token,Right$(,RIGHT$,function,T_FUN | T_STR,0,fun_right,135
 MMB4L,token,Rnd(,RND,function,T_FUN | T_NBR,0,fun_rnd,136
 MMB4L,token,Rnd,RND,function,T_FNA | T_NBR,0,fun_rnd,137
-MMB4L,token,Sgn(,SGN,function,T_FUN | T_INT,0,fun_sgn,138
-MMB4L,token,Sin(,SIN,function,T_FUN | T_NBR,0,fun_sin,139
-MMB4L,token,Space$(,SPACE$,function,T_FUN | T_STR,0,fun_space,140
-MMB4L,token,Spc(,SPC,function,T_FUN | T_STR,0,fun_space,141
-MMB4L,token,Sprite(,SPRITE,function,T_FUN | T_INT | T_NBR | T_STR,0,fun_sprite,142
-MMB4L,token,Sqr(,SQR,function,T_FUN | T_NBR,0,fun_sqr,143
-MMB4L,token,Str$(,STR$,function,T_FUN | T_STR,0,fun_str,144
-MMB4L,token,Str2Bin(,STR2BIN,function,T_FUN | T_NBR | T_INT,0,fun_str2bin,145
-MMB4L,token,String$(,STRING$,function,T_FUN | T_STR,0,fun_string,146
-MMB4L,token,Tab(,TAB,function,T_FUN | T_STR,0,fun_tab,147
-MMB4L,token,Tan(,TAN,function,T_FUN | T_NBR,0,fun_tan,148
-MMB4L,token,Time$,TIME$,function,T_FNA | T_STR,0,fun_time,149
-MMB4L,token,Timer,TIMER,function,T_FNA | T_INT,0,fun_timer,150
-MMB4L,token,UCase$(,UCASE$,function,T_FUN | T_STR,0,fun_ucase,151
-MMB4L,token,Val(,VAL,function,T_FUN | T_NBR | T_INT,0,fun_val,152
-MMB4L,token,As,AS,keyword,T_NA,0,op_invalid,154
-MMB4L,token,Else,ELSE,keyword,T_NA,0,op_invalid,155
-MMB4L,token,For,FOR,keyword,T_NA,0,op_invalid,156
-MMB4L,token,GoSub,GOSUB,keyword,T_NA,0,op_invalid,157
-MMB4L,token,GoTo,GOTO,keyword,T_NA,0,op_invalid,158
-MMB4L,token,Step,STEP,keyword,T_NA,0,op_invalid,159
-MMB4L,token,Then,THEN,keyword,T_NA,0,op_invalid,160
-MMB4L,token,To,TO,keyword,T_NA,0,op_invalid,161
-MMB4L,token,Until,UNTIL,keyword,T_NA,0,op_invalid,162
-MMB4L,token,While,WHILE,keyword,T_NA,0,op_invalid,163
-MMB4L,token,^,^,operator,T_OPER | T_NBR | T_INT,0,op_exp,165
-MMB4L,token,*,*,operator,T_OPER | T_NBR | T_INT,1,op_mul,166
-MMB4L,token,/,/,operator,T_OPER | T_NBR,1,op_div,167
-MMB4L,token,\,\,operator,T_OPER | T_INT,1,op_divint,168
-MMB4L,token,Mod,MOD,operator,T_OPER | T_INT,1,op_mod,169
-MMB4L,token,+,+,operator,T_OPER | T_NBR | T_INT | T_STR,2,op_add,170
-MMB4L,token,-,-,operator,T_OPER | T_NBR | T_INT,2,op_subtract,171
-MMB4L,token,Not,NOT,operator,T_OPER | T_NBR,3,op_not,172
-MMB4L,token,Inv,INV,operator,T_OPER | T_NBR,3,op_inv,173
-MMB4L,token,<<,<<,operator,T_OPER | T_INT,4,op_shiftleft,174
-MMB4L,token,>>,>>,operator,T_OPER | T_INT,4,op_shiftright,175
-MMB4L,token,<>,<>,operator,T_OPER | T_NBR | T_INT | T_STR,5,op_ne,176
-MMB4L,token,>=,>=,operator,T_OPER | T_NBR | T_INT | T_STR,5,op_gte,177
-MMB4L,token,=>,=>,operator,T_OPER | T_NBR | T_INT | T_STR,5,op_gte,178
-MMB4L,token,<=,<=,operator,T_OPER | T_NBR | T_INT | T_STR,5,op_lte,179
-MMB4L,token,=<,=<,operator,T_OPER | T_NBR | T_INT | T_STR,5,op_lte,180
-MMB4L,token,<,<,operator,T_OPER | T_NBR | T_INT | T_STR,5,op_lt,181
-MMB4L,token,>,>,operator,T_OPER | T_NBR | T_INT | T_STR,5,op_gt,182
-MMB4L,token,=,=,operator,T_OPER | T_NBR | T_INT | T_STR,6,op_equal,183
-MMB4L,token,And,AND,operator,T_OPER | T_INT,7,op_and,184
-MMB4L,token,Or,OR,operator,T_OPER | T_INT,7,op_or,185
-MMB4L,token,Xor,XOR,operator,T_OPER | T_INT,7,op_xor,186
-MMB4L,token,Trim$(,TRIM$,function,T_FUN | T_STR,0,fun_trim,187
+MMB4L,token,SChange$(,SCHANGE$,function,T_FUN | T_STR,0,fun_schange,138
+MMB4L,token,Sgn(,SGN,function,T_FUN | T_INT,0,fun_sgn,139
+MMB4L,token,Sin(,SIN,function,T_FUN | T_NBR,0,fun_sin,140
+MMB4L,token,Space$(,SPACE$,function,T_FUN | T_STR,0,fun_space,141
+MMB4L,token,Spc(,SPC,function,T_FUN | T_STR,0,fun_space,142
+MMB4L,token,Sprite(,SPRITE,function,T_FUN | T_INT | T_NBR | T_STR,0,fun_sprite,143
+MMB4L,token,Sqr(,SQR,function,T_FUN | T_NBR,0,fun_sqr,144
+MMB4L,token,Str$(,STR$,function,T_FUN | T_STR,0,fun_str,145
+MMB4L,token,Str2Bin(,STR2BIN,function,T_FUN | T_NBR | T_INT,0,fun_str2bin,146
+MMB4L,token,String$(,STRING$,function,T_FUN | T_STR,0,fun_string,147
+MMB4L,token,Tab(,TAB,function,T_FUN | T_STR,0,fun_tab,148
+MMB4L,token,Tan(,TAN,function,T_FUN | T_NBR,0,fun_tan,149
+MMB4L,token,Time$,TIME$,function,T_FNA | T_STR,0,fun_time,150
+MMB4L,token,Timer,TIMER,function,T_FNA | T_INT,0,fun_timer,151
+MMB4L,token,UCase$(,UCASE$,function,T_FUN | T_STR,0,fun_ucase,152
+MMB4L,token,Val(,VAL,function,T_FUN | T_NBR | T_INT,0,fun_val,153
+MMB4L,token,As,AS,keyword,T_NA,0,op_invalid,155
+MMB4L,token,Else,ELSE,keyword,T_NA,0,op_invalid,156
+MMB4L,token,For,FOR,keyword,T_NA,0,op_invalid,157
+MMB4L,token,GoSub,GOSUB,keyword,T_NA,0,op_invalid,158
+MMB4L,token,GoTo,GOTO,keyword,T_NA,0,op_invalid,159
+MMB4L,token,Step,STEP,keyword,T_NA,0,op_invalid,160
+MMB4L,token,Then,THEN,keyword,T_NA,0,op_invalid,161
+MMB4L,token,To,TO,keyword,T_NA,0,op_invalid,162
+MMB4L,token,Until,UNTIL,keyword,T_NA,0,op_invalid,163
+MMB4L,token,While,WHILE,keyword,T_NA,0,op_invalid,164
+MMB4L,token,^,^,operator,T_OPER | T_NBR | T_INT,0,op_exp,166
+MMB4L,token,*,*,operator,T_OPER | T_NBR | T_INT,1,op_mul,167
+MMB4L,token,/,/,operator,T_OPER | T_NBR,1,op_div,168
+MMB4L,token,\,\,operator,T_OPER | T_INT,1,op_divint,169
+MMB4L,token,Mod,MOD,operator,T_OPER | T_INT,1,op_mod,170
+MMB4L,token,+,+,operator,T_OPER | T_NBR | T_INT | T_STR,2,op_add,171
+MMB4L,token,-,-,operator,T_OPER | T_NBR | T_INT,2,op_subtract,172
+MMB4L,token,Not,NOT,operator,T_OPER | T_NBR,3,op_not,173
+MMB4L,token,Inv,INV,operator,T_OPER | T_NBR,3,op_inv,174
+MMB4L,token,<<,<<,operator,T_OPER | T_INT,4,op_shiftleft,175
+MMB4L,token,>>,>>,operator,T_OPER | T_INT,4,op_shiftright,176
+MMB4L,token,<>,<>,operator,T_OPER | T_NBR | T_INT | T_STR,5,op_ne,177
+MMB4L,token,>=,>=,operator,T_OPER | T_NBR | T_INT | T_STR,5,op_gte,178
+MMB4L,token,=>,=>,operator,T_OPER | T_NBR | T_INT | T_STR,5,op_gte,179
+MMB4L,token,<=,<=,operator,T_OPER | T_NBR | T_INT | T_STR,5,op_lte,180
+MMB4L,token,=<,=<,operator,T_OPER | T_NBR | T_INT | T_STR,5,op_lte,181
+MMB4L,token,<,<,operator,T_OPER | T_NBR | T_INT | T_STR,5,op_lt,182
+MMB4L,token,>,>,operator,T_OPER | T_NBR | T_INT | T_STR,5,op_gt,183
+MMB4L,token,=,=,operator,T_OPER | T_NBR | T_INT | T_STR,6,op_equal,184
+MMB4L,token,And,AND,operator,T_OPER | T_INT,7,op_and,185
+MMB4L,token,Or,OR,operator,T_OPER | T_INT,7,op_or,186
+MMB4L,token,Xor,XOR,operator,T_OPER | T_INT,7,op_xor,187
+MMB4L,token,Trim$(,TRIM$,function,T_FUN | T_STR,0,fun_trim,188

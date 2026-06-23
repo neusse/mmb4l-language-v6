@@ -41,14 +41,14 @@ classify them instead of silently missing them.
 
 | Source | Command | Function | Operator | Keyword |
 | --- | ---: | ---: | ---: | ---: |
-| MMB4L | 122 | 93 | 22 | 10 |
+| MMB4L | 122 | 94 | 22 | 10 |
 | PicoMite v6 | 220 | 110 | 20 | 10 |
 
 PicoMite v6 to MMB4L gap rows:
 
 | Classification | Count | Meaning |
 | --- | ---: | --- |
-| portable | 36 | Language/runtime feature that should be possible to port without PicoMite hardware. |
+| portable | 35 | Language/runtime feature that should be possible to port without PicoMite hardware. |
 | linux-specific | 15 | Needs Linux filesystem, process, display, GUI, or host behavior mapping. |
 | hardware | 84 | Depends on PicoMite hardware, bus, display/input firmware, or embedded-only behavior. |
 | defer | 4 | Needs source review before choosing a class. |
@@ -87,7 +87,7 @@ includes likely port candidates such as:
 | Area | Candidates |
 | --- | --- |
 | Parser/comments | `/*`, `*/` |
-| Strings | `base$(`, `SChange$(` |
+| Strings | `base$(` |
 | Arrays | `Array Add`, `Array Insert`, `Array Set`, `Array Slice`, `ReDim` |
 | Structured data | `Type`, `End Type`, `Struct`, `Struct(` |
 | Bit/byte helpers | `Bit(`, `Byte(`, `Flag(`, `Flags` |

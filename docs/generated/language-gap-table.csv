@@ -96,7 +96,6 @@ Refresh,REFRESH,command,hardware,cmd_refresh,-,"Depends on PicoMite hardware, di
 RESOLUTION,RESOLUTION,command,hardware,cmd_resolution,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
 RTC,RTC,command,hardware,cmd_rtc,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
 Save,SAVE,command,linux-specific,cmd_save,-,MMB4L intentionally edits real files and has no flash-to-disk save step; any compatibility command needs Linux file semantics.
-SChange$(,SCHANGE$,function,portable,fun_schange,-,Language/runtime feature with no required PicoMite-only hardware.
 Servo,SERVO,command,hardware,cmd_Servo,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
 Set,SET,command,hardware,cmd_set,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
 Slew,SLEW,command,hardware,cmd_slew,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."

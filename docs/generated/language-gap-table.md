@@ -8,7 +8,7 @@ A gap row means PicoMite exposes that surface and MMB4L does not expose the same
 
 | Classification | Count |
 | --- | ---: |
-| portable | 36 |
+| portable | 35 |
 | linux-specific | 15 |
 | hardware | 84 |
 | defer | 4 |
@@ -148,7 +148,6 @@ A gap row means PicoMite exposes that surface and MMB4L does not expose the same
 | `Mandelbrot` | command | portable | `cmd_mandelbrot` | - | Language/runtime feature with no required PicoMite-only hardware. |
 | `Pixel` | function | portable | `fun_pixel` | command | PicoMite `Pixel(x,y)` reads a pixel colour; MMB4L has the write command and likely can add this through its graphics surface pixels. |
 | `ReDim` | command | portable | `cmd_redim` | - | Language/runtime feature with no required PicoMite-only hardware. |
-| `SChange$(` | function | portable | `fun_schange` | - | Language/runtime feature with no required PicoMite-only hardware. |
 | `Star` | command | portable | `cmd_star` | - | Language/runtime feature with no required PicoMite-only hardware. |
 | `Struct` | command | portable | `cmd_struct` | - | Language/runtime feature with no required PicoMite-only hardware. |
 | `Struct` | function | portable | `fun_struct` | - | Language/runtime feature with no required PicoMite-only hardware. |

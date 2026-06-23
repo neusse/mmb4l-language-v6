@@ -77,6 +77,7 @@ void fun_rad() { }
 void fun_rgb() { }
 void fun_right() { }
 void fun_rnd() { }
+void fun_schange() { }
 void fun_sgn() { }
 void fun_sin() { }
 void fun_space() { }
