@@ -23,6 +23,7 @@ add_test("test_chr_ascii")
 add_test("test_chr_utf8")
 add_test("test_format_function")
 add_test("test_hex_function")
+add_test("test_byte_function_and_command")
 add_test("test_mid_function")
 add_test("test_mid_command")
 add_test("test_oct_function")
@@ -130,6 +131,15 @@ Sub test_hex_function()
   assert_string_equals("FFFFFFFFFFFFFFFF", Hex$(-1, 4))
   assert_string_equals("7FFFFFFFFFFFFFFF", Hex$(MAX_INT%, 4))
   assert_string_equals("8000000000000000", Hex$(MIN_INT%, 4))
+End Sub
+
+Sub test_byte_function_and_command()
+  Local s$ = "ABCD"
+
+  assert_int_equals(65, Byte(s$, 1))
+  Byte(s$, 2) = 90
+  assert_string_equals("AZCD", s$)
+  assert_int_equals(90, Byte(s$, 2))
 End Sub
 
 Sub test_mid_function()

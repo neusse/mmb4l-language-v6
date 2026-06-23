@@ -121,6 +121,10 @@ MMB4L,command,TrOn,TRON,command,T_CMD,0,cmd_tron,181
 MMB4L,command,Wend,WEND,command,T_CMD,0,cmd_loop,182
 MMB4L,command,While,WHILE,command,T_CMD,0,cmd_do,183
 MMB4L,command,XModem,XMODEM,command,T_CMD,0,cmd_xmodem,184
+MMB4L,command,Bit(,BIT,"command,function",T_CMD | T_FUN,0,cmd_bit,185
+MMB4L,command,Byte(,BYTE,"command,function",T_CMD | T_FUN,0,cmd_byte,186
+MMB4L,command,Flag(,FLAG,"command,function",T_CMD | T_FUN,0,cmd_flag,187
+MMB4L,command,Flags,FLAGS,command,T_CMD,0,cmd_flags,188
 MMB4L,token,@(,@,function,T_FUN | T_STR,0,fun_at,64
 MMB4L,token,Abs(,ABS,function,T_FUN | T_NBR | T_INT,0,fun_abs,65
 MMB4L,token,ACos(,ACOS,function,T_FUN | T_NBR,0,fun_acos,66
@@ -246,3 +250,6 @@ MMB4L,token,Trim$(,TRIM$,function,T_FUN | T_STR,0,fun_trim,187
 MMB4L,token,SChange$(,SCHANGE$,function,T_FUN | T_STR,0,fun_schange,188
 MMB4L,token,base$(,BASE$,function,T_FUN | T_STR,0,fun_base,189
 MMB4L,token,TopBottom(,TOPBOTTOM,function,T_FUN | T_NBR,0,fun_topbottom,190
+MMB4L,token,Bit(,BIT,function,T_FUN | T_INT,0,fun_bit,191
+MMB4L,token,Byte(,BYTE,function,T_FUN | T_INT,0,fun_byte,192
+MMB4L,token,Flag(,FLAG,function,T_FUN | T_INT,0,fun_flag,193

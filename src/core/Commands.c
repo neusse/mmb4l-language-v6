@@ -79,6 +79,66 @@ int TraceOn;                                                        // used to t
 const char *TraceBuff[TRACE_BUFF_SIZE];
 int TraceBuffIndex;                                                 // used for listing the contents of the trace buffer
 
+
+static void find_assignment_value(void) {
+    while (*cmdline && tokenfunction(*cmdline) != op_equal) cmdline++;
+    if (!*cmdline) ERROR_SYNTAX;
+    ++cmdline;
+    if (!*cmdline) ERROR_SYNTAX;
+}
+
+
+void cmd_bit(void) {
+    getargs(&cmdline, 3, ",");
+    if (argc != 3) ERROR_SYNTAX;
+
+    MMINTEGER *value = (MMINTEGER *)findvar(argv[0], V_NOFIND_ERR);
+    if (vartbl[VarIndex].type & T_CONST) ERROR_CANNOT_CHANGE_A_CONSTANT;
+    if (!(vartbl[VarIndex].type & T_INT)) error("Not an integer");
+
+    uint64_t bit = 1ULL << getint(argv[2], 0, 63);
+    find_assignment_value();
+    if (getint(cmdline, 0, 1)) {
+        *value = (MMINTEGER)((uint64_t)*value | bit);
+    } else {
+        *value = (MMINTEGER)((uint64_t)*value & ~bit);
+    }
+}
+
+
+void cmd_byte(void) {
+    getargs(&cmdline, 3, ",");
+    if (argc != 3) ERROR_SYNTAX;
+
+    char *value = (char *)findvar(argv[0], V_NOFIND_ERR);
+    if (vartbl[VarIndex].type & T_CONST) ERROR_CANNOT_CHANGE_A_CONSTANT;
+    if (!(vartbl[VarIndex].type & T_STR)) error("Not a string");
+
+    MMINTEGER index = getint(argv[2], 1, (unsigned char)value[0]);
+    find_assignment_value();
+    value[index] = (char)getint(cmdline, 0, 255);
+}
+
+
+void cmd_flag(void) {
+    getargs(&cmdline, 1, ",");
+    if (argc != 1) ERROR_SYNTAX;
+
+    uint64_t bit = 1ULL << getint(argv[0], 0, 63);
+    find_assignment_value();
+    if (getint(cmdline, 0, 1)) {
+        g_flag = (MMINTEGER)((uint64_t)g_flag | bit);
+    } else {
+        g_flag = (MMINTEGER)((uint64_t)g_flag & ~bit);
+    }
+}
+
+
+void cmd_flags(void) {
+    find_assignment_value();
+    g_flag = getinteger(cmdline);
+}
+
 #if !defined(__mmb4l__)
 int OptionErrorSkip;                                                // how to handle an error
 int MMerrno;                                                        // the error number

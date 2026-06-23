@@ -8,7 +8,7 @@ A gap row means PicoMite exposes that surface and MMB4L does not expose the same
 
 | Classification | Count |
 | --- | ---: |
-| portable | 33 |
+| portable | 26 |
 | linux-specific | 15 |
 | hardware | 84 |
 | defer | 4 |
@@ -128,18 +128,11 @@ A gap row means PicoMite exposes that surface and MMB4L does not expose the same
 | `Array Slice` | command | portable | `cmd_slice` | - | Language/runtime feature with no required PicoMite-only hardware. |
 | `Astro` | command | portable | `cmd_star` | - | Language/runtime feature with no required PicoMite-only hardware. |
 | `Bezier` | command | portable | `cmd_bezier` | - | Language/runtime feature with no required PicoMite-only hardware. |
-| `Bit(` | command | portable | `cmd_bit` | - | Language/runtime feature with no required PicoMite-only hardware. |
-| `Bit(` | function | portable | `cmd_bit, fun_bit` | - | Language/runtime feature with no required PicoMite-only hardware. |
 | `Blit Memory` | command | portable | `cmd_blitmemory` | - | Language/runtime feature with no required PicoMite-only hardware. |
-| `Byte(` | command | portable | `cmd_byte` | - | Language/runtime feature with no required PicoMite-only hardware. |
-| `Byte(` | function | portable | `cmd_byte, fun_byte` | - | Language/runtime feature with no required PicoMite-only hardware. |
 | `Chain` | command | portable | `cmd_chain` | - | Language/runtime feature with no required PicoMite-only hardware. |
 | `End Type` | command | portable | `cmd_endtype` | - | Language/runtime feature with no required PicoMite-only hardware. |
 | `Fill` | command | portable | `cmd_fill` | - | Language/runtime feature with no required PicoMite-only hardware. |
-| `Flag(` | command | portable | `cmd_flag` | - | Language/runtime feature with no required PicoMite-only hardware. |
-| `Flag(` | function | portable | `cmd_flag, fun_flag` | - | Language/runtime feature with no required PicoMite-only hardware. |
-| `Flags` | command | portable | `cmd_flags` | - | Language/runtime feature with no required PicoMite-only hardware. |
-| `Flags` | function | portable | `cmd_flags` | - | Language/runtime feature with no required PicoMite-only hardware. |
+| `Flags` | function | portable | `cmd_flags` | command | Language/runtime feature with no required PicoMite-only hardware. |
 | `LInput(` | function | portable | `fun_linputstr` | - | Language/runtime feature with no required PicoMite-only hardware. |
 | `LMid(` | command | portable | `cmd_lmid` | - | Language/runtime feature with no required PicoMite-only hardware. |
 | `LMid(` | function | portable | `cmd_lmid` | - | Language/runtime feature with no required PicoMite-only hardware. |

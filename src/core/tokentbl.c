@@ -188,6 +188,9 @@ const struct s_tokentbl tokentbl[] = {
     { "SChange$(",   T_FUN | T_STR,                  0, fun_schange  },
     { "base$(",      T_FUN | T_STR,                  0, fun_base     },
     { "TopBottom(",  T_FUN | T_NBR,                  0, fun_topbottom },
+    { "Bit(",        T_FUN | T_INT,                  0, fun_bit      },
+    { "Byte(",       T_FUN | T_INT,                  0, fun_byte     },
+    { "Flag(",       T_FUN | T_INT,                  0, fun_flag     },
 
     { "",            0,                              0, cmd_null,    }  // This dummy entry is always at the end.
 };

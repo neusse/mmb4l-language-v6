@@ -16,7 +16,9 @@ void fun_atn() { }
 void fun_base() { }
 void fun_bin() { }
 void fun_bin2str() { }
+void fun_bit() { }
 void fun_bound() { }
+void fun_byte() { }
 void fun_call() { }
 void fun_choice() { }
 void fun_chr() { }
@@ -38,6 +40,7 @@ void fun_eval() { }
 void fun_exp() { }
 void fun_field() { }
 void fun_fix() { }
+void fun_flag() { }
 void fun_format() { }
 void fun_gamepad() { }
 void fun_hex() { }

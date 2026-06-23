@@ -182,6 +182,10 @@ const struct s_tokentbl commandtbl[] = {
     { "Wend",        T_CMD,              0, cmd_loop     },
     { "While",       T_CMD,              0, cmd_do       },
     { "XModem",      T_CMD,              0, cmd_xmodem   },
+    { "Bit(",        T_CMD | T_FUN,      0, cmd_bit      },
+    { "Byte(",       T_CMD | T_FUN,      0, cmd_byte     },
+    { "Flag(",       T_CMD | T_FUN,      0, cmd_flag     },
+    { "Flags",       T_CMD,              0, cmd_flags    },
     { "",            0,                  0, cmd_null,    }  // This dummy entry is always at the end.
 };
 

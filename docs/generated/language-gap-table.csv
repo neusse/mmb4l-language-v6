@@ -9,12 +9,8 @@ Array Slice,ARRAY SLICE,command,portable,cmd_slice,-,Language/runtime feature wi
 Astro,ASTRO,command,portable,cmd_star,-,Language/runtime feature with no required PicoMite-only hardware.
 Backlight,BACKLIGHT,command,hardware,cmd_backlight,-,"Hardware command, but a target-specific Luckfox/PicoCalc backend may be useful because the device has controllable backlight support."
 Bezier,BEZIER,command,portable,cmd_bezier,-,Language/runtime feature with no required PicoMite-only hardware.
-Bit(,BIT,command,portable,cmd_bit,-,Language/runtime feature with no required PicoMite-only hardware.
-Bit(,BIT,function,portable,"cmd_bit, fun_bit",-,Language/runtime feature with no required PicoMite-only hardware.
 Bitstream,BITSTREAM,command,hardware,cmd_bitstream,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
 Blit Memory,BLIT MEMORY,command,portable,cmd_blitmemory,-,Language/runtime feature with no required PicoMite-only hardware.
-Byte(,BYTE,command,portable,cmd_byte,-,Language/runtime feature with no required PicoMite-only hardware.
-Byte(,BYTE,function,portable,"cmd_byte, fun_byte",-,Language/runtime feature with no required PicoMite-only hardware.
 Calc,CALC,command,defer,cmd_calc,-,Needs source review before deciding whether it is portable or backend-specific.
 Camera,CAMERA,command,hardware,cmd_camera,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
 Chain,CHAIN,command,portable,cmd_chain,-,Language/runtime feature with no required PicoMite-only hardware.
@@ -34,10 +30,7 @@ Drive,DRIVE,command,linux-specific,cmd_drive,-,"Needs Linux filesystem, process,
 Edit File,EDIT FILE,command,linux-specific,cmd_editfile,-,"PicoMite edits an external file buffer; MMB4L `Edit` already accepts a filename, so this is likely a compatibility alias/design task."
 End Type,END TYPE,command,portable,cmd_endtype,-,Language/runtime feature with no required PicoMite-only hardware.
 Fill,FILL,command,portable,cmd_fill,-,Language/runtime feature with no required PicoMite-only hardware.
-Flag(,FLAG,command,portable,cmd_flag,-,Language/runtime feature with no required PicoMite-only hardware.
-Flag(,FLAG,function,portable,"cmd_flag, fun_flag",-,Language/runtime feature with no required PicoMite-only hardware.
-Flags,FLAGS,command,portable,cmd_flags,-,Language/runtime feature with no required PicoMite-only hardware.
-Flags,FLAGS,function,portable,cmd_flags,-,Language/runtime feature with no required PicoMite-only hardware.
+Flags,FLAGS,function,portable,cmd_flags,command,Language/runtime feature with no required PicoMite-only hardware.
 Flush,FLUSH,command,linux-specific,cmd_flush,-,"Needs Linux filesystem, process, or host configuration semantics."
 FM,FM,command,hardware,cmd_fm,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."
 Frame,FRAME,command,hardware,cmd_frame,-,"Depends on PicoMite hardware, display, input, bus, or firmware backend."

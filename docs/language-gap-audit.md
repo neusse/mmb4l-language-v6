@@ -41,14 +41,14 @@ classify them instead of silently missing them.
 
 | Source | Command | Function | Operator | Keyword |
 | --- | ---: | ---: | ---: | ---: |
-| MMB4L | 122 | 96 | 22 | 10 |
+| MMB4L | 126 | 102 | 22 | 10 |
 | PicoMite v6 | 220 | 110 | 20 | 10 |
 
 PicoMite v6 to MMB4L gap rows:
 
 | Classification | Count | Meaning |
 | --- | ---: | --- |
-| portable | 33 | Language/runtime feature that should be possible to port without PicoMite hardware. |
+| portable | 26 | Language/runtime feature that should be possible to port without PicoMite hardware. |
 | linux-specific | 15 | Needs Linux filesystem, process, display, GUI, or host behavior mapping. |
 | hardware | 84 | Depends on PicoMite hardware, bus, display/input firmware, or embedded-only behavior. |
 | defer | 4 | Needs source review before choosing a class. |
@@ -90,7 +90,7 @@ includes likely port candidates such as:
 | Strings | none currently classified as small string functions |
 | Arrays | `Array Add`, `Array Insert`, `Array Set`, `Array Slice`, `ReDim` |
 | Structured data | `Type`, `End Type`, `Struct`, `Struct(` |
-| Bit/byte helpers | `Bit(`, `Byte(`, `Flag(`, `Flags` |
+| Bit/byte helpers | `Flags` as a bare readback function remains; `Bit(`, `Byte(`, `Flag(`, and `Flags = value` are implemented. |
 | LongString | `LInput(`, `LMid(` |
 | Graphics | `Bezier`, `Fill`, `Mandelbrot`, `Pixel(`, `Turtle` |
 | Program/runtime helpers | `Chain`, `VAR` |
@@ -109,6 +109,7 @@ includes likely port candidates such as:
 | `Pixel(` | portable | PicoMite reads a pixel colour; MMB4L already has pixel-writing and in-memory graphics surfaces. |
 | `Save` | linux-specific | MMB4L intentionally edits real files and has no flash-to-disk `SAVE` step. Any compatibility command needs explicit Linux semantics. |
 | `YModem` | linux-specific | Serial transfer workflow; not needed for current PicoCalc/Luckfox scope. |
+| `Flags` function | portable | `Flags = value` is implemented as a command and `Flag(n)` can read individual bits. Bare `Flags` readback still needs parser/token-table work because the existing one-byte token table is full at `Flag(` token 255. |
 
 ## Defer Items
 
@@ -121,10 +122,11 @@ These four gaps should be source-reviewed before classification changes:
 | `WatchDog` | May be firmware/hardware behavior, but source should confirm. |
 | `~(` | Needs source review for semantics and safety. |
 
-## Prior Completed Patch
+## Prior Completed Patches
 
-`Trim$(` was ported before this generated baseline. It now appears in both
-surfaces and is no longer a gap.
+`Trim$(`, `SChange$(`, `base$(`, `TopBottom(`, `Bit(`, `Byte(`, `Flag(`,
+and `Flags = value` were ported before this generated baseline. They now
+appear in both surfaces where token capacity allows and are no longer gaps.
 
 Verification at that point:
 

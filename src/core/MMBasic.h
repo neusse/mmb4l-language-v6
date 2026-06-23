@@ -93,6 +93,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 extern int VarIndex;                                  // index of the current variable.  set after the findvar() function has found/created a variable
 extern int LocalIndex;                                // used to track the level of local variables
+extern MMINTEGER g_flag;                              // PicoMite-compatible FLAGS/FLAG state
 
 #if !defined(__mmb4l__)
 extern int OptionBase;                                // value of OPTION BASE

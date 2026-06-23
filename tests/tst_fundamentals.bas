@@ -22,6 +22,8 @@ add_test("test_erase")
 add_test("test_erase_given_arrays")
 add_test("test_erase_given_strings")
 add_test("test_inv")
+add_test("test_bit_function_and_command")
+add_test("test_flag_function_and_commands")
 add_test("test_unary_minus")
 add_test("test_unary_plus")
 add_test("test_error_correct_after_goto")
@@ -159,6 +161,33 @@ Sub test_inv()
   assert_hex_equals(&h0,                Inv(&hFFFFFFFFFFFFFFFF))
   assert_hex_equals(&h8000000000000000, Inv(&h7FFFFFFFFFFFFFFF))
   assert_hex_equals(&h7FFFFFFFFFFFFFFF, Inv(&h8000000000000000))
+End Sub
+
+Sub test_bit_function_and_command()
+  Local value% = 0
+
+  Bit(value%, 3) = 1
+  assert_int_equals(8, value%)
+  assert_int_equals(1, Bit(value%, 3))
+
+  Bit(value%, 3) = 0
+  assert_int_equals(0, value%)
+  assert_int_equals(0, Bit(value%, 3))
+End Sub
+
+Sub test_flag_function_and_commands()
+  Flags = 0
+  Flag(5) = 1
+  assert_int_equals(1, Flag(5))
+
+  Flag(5) = 0
+  assert_int_equals(0, Flag(5))
+
+  Flags = 10
+  assert_int_equals(0, Flag(0))
+  assert_int_equals(1, Flag(1))
+  assert_int_equals(0, Flag(2))
+  assert_int_equals(1, Flag(3))
 End Sub
 
 Sub test_unary_minus()

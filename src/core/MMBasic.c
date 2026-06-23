@@ -71,6 +71,7 @@ int CommandTableSize, TokenTableSize;
 
 int VarIndex;                                                       // Global set by findvar after a variable has been created or found
 int LocalIndex;                                                     // used to track the level of local variables
+MMINTEGER g_flag;                                                   // PicoMite-compatible FLAGS/FLAG state
 #if !defined(__mmb4l__)
 char OptionExplicit;                                                // used to force the declaration of variables before their use
 char DefaultType;                                                   // the default type if a variable is not specifically typed

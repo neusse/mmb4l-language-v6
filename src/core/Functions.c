@@ -48,6 +48,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include "../common/parse.h"
 #include "MMBasic.h"
 #include "Functions.h"
+#include "vartbl.h"
 
 /********************************************************************************************************************************************
  basic functions
@@ -900,4 +901,43 @@ void fun_topbottom(void) {
     }
     fret = result;
     targ = T_NBR;
+}
+
+
+// Returns the state of bit 'n' in an integer variable.
+// n = BIT(integer%, bit%)
+void fun_bit(void) {
+    getargs(&ep, 3, ",");
+    if (argc != 3) ERROR_SYNTAX;
+
+    MMINTEGER *value = (MMINTEGER *)findvar(argv[0], V_NOFIND_ERR);
+    if (!(vartbl[VarIndex].type & T_INT)) error("Not an integer");
+
+    MMINTEGER bit = getint(argv[2], 0, 63);
+    iret = (((uint64_t)*value & (1ULL << bit)) >> bit) & 1ULL;
+    targ = T_INT;
+}
+
+
+// Returns the byte at 1-based index 'n' in a string variable.
+// n = BYTE(string$, index%)
+void fun_byte(void) {
+    getargs(&ep, 3, ",");
+    if (argc != 3) ERROR_SYNTAX;
+
+    char *value = (char *)findvar(argv[0], V_NOFIND_ERR);
+    if (!(vartbl[VarIndex].type & T_STR)) error("Not a string");
+
+    MMINTEGER index = getint(argv[2], 1, vartbl[VarIndex].size);
+    iret = (unsigned char)value[index];
+    targ = T_INT;
+}
+
+
+// Returns the state of bit 'n' in the PicoMite-compatible FLAGS register.
+// n = FLAG(bit%)
+void fun_flag(void) {
+    MMINTEGER bit = getint(ep, 0, 63);
+    iret = (((uint64_t)g_flag & (1ULL << bit)) >> bit) & 1ULL;
+    targ = T_INT;
 }
